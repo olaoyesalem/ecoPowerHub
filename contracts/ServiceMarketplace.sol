@@ -5,14 +5,13 @@ pragma solidity ^0.8.0;
 /// @author olaoye salem
 /// @notice This smart contract is a  factory that will always be deployed by companies. 
 /// @notice This contract allow users to invest in companies and participate in the revenue sharing. 
-
+/// @dev Explain to a developer any extra details
 
 contract ServiceMarketplace {
     address public owner;
     uint256 public totalCompanyValue;  // Total value of the company
-    uint256 public totalShares;    
-    uint256 public sharePrice;// Price per share in toro
-    uint256 public constantShare; 
+    uint256 public totalShares;       // Total shares available
+    uint256 public sharePrice;        // Price per share in toroNet
 
     struct Investor {
         uint256 investedAmount;
@@ -33,7 +32,6 @@ contract ServiceMarketplace {
         owner = msg.sender;
         totalCompanyValue = _totalCompanyValue;
         totalShares = _totalShares;
-        constantShare = _totalShares;
         sharePrice = _sharePrice;
     }
 
@@ -42,13 +40,11 @@ contract ServiceMarketplace {
         _;
     }
 
-    function invest() public payable {
+    function invest(uint256 percentage) public payable {
         require(msg.value > 0, "Investment amount must be greater than 0");
-        uint256  percentage= (((msg.value)/(sharePrice * constantShare))*100)/1e18;
         require(percentage > 0 && percentage <= 100, "Percentage must be between 1 and 100");
 
-
-        uint256 sharesToBuy = (constantShare * percentage)/100 ;
+        uint256 sharesToBuy = (totalShares * percentage) / 100;
         require(sharesToBuy <= totalShares, "Not enough shares available");
 
         investors[msg.sender].investedAmount += msg.value;
@@ -66,17 +62,16 @@ contract ServiceMarketplace {
 
         ///@notice This function takes in the serviceAmount and allow users that have recived service from the comapny
         /// @notice to pay the company and the investors.
-    function payForService() public payable{ // anybody should be able to call this 
+    function payForService(uint256 serviceAmount) public payable{ // anybody should be able to call this 
         // Calculate payments to investors and distribute
-       
+        // Sends the remaining to the esmnart conyttract 
         for (uint256 i = 0; i < investorAddresses.length; i++) {
             address investor = investorAddresses[i];
-            uint256 share = ((msg.value/1e18) * investors[investor].sharePercentage) / 100;
+            uint256 share = (serviceAmount * investors[investor].sharePercentage) / 100;
             uint256 payout = (investors[investor].investedAmount * share) / totalCompanyValue;
-            
             payable(investor).transfer(payout);
 
-            emit ServicePaymentProcessed(msg.value);
+            emit ServicePaymentProcessed(serviceAmount);
         }
         
     }
@@ -88,10 +83,7 @@ contract ServiceMarketplace {
         emit  withdrawSuccess(_amount, _address);
     }
 
-    function checkBalance() public  view returns (uint256){
-        return  address(this).balance;
+    function checkBalance() public {
 
     }
-
-    
 }
