@@ -21,3 +21,9 @@ and they put out 2 million toro for investment.
 If  a User H buys 10% of 2 million toro which is 200,000 toro.
 
 onnce Compny A sells service to people worth any amount while crediting Campany A . User H recieves 10% of that amount.
+
+
+// So the first smart contract  
+// So  there's just a partcilar contract but each company will de[ploy it,.
+
+bi will be the same but the addresss will be different
