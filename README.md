@@ -27,3 +27,12 @@ onnce Compny A sells service to people worth any amount while crediting Campany 
 // So  there's just a partcilar contract but each company will de[ploy it,.
 
 bi will be the same but the addresss will be different
+
+
+Invest is the sa,e thing as deploying , so we just need to invest to and sell
+
+
+// Things to do 
+// 1 check if everything is working on locla host
+//  Deploy  on toro net
+// Find a way to deploy everytime and interact 
