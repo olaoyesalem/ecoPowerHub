@@ -1,11 +1,4 @@
 const { network} = require('hardhat')
-const {
-     developmentChains,
-    totalCompanyValue,
-    totalShares,
-    sharePrice} = require('../helper-hardhat-config.js');
-
-
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { log, deploy } = deployments
@@ -17,11 +10,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const ServiceMarketplace = await deploy('ServiceMarketplace', {
         from: deployer,
         log: true,
-        args: [
-    totalCompanyValue,
-    totalShares,
-    sharePrice
-        ],
+        args: [],
     })
     log('--------------------------')
     log('Deployed.......')
