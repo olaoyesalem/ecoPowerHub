@@ -22,6 +22,10 @@ import cloud from "../assets/cloud.png";
 import cat from "../assets/cat.png";
 import cat2 from "../assets/cat2.png";
 import catman from "../assets/catman.png";
+import space6 from "../assets/space6.png";
+import metamask from "../assets/Metamask.png";
+import coinbase from "../assets/Coinbase.png";
+import walletconnect from "../assets/WalletConnect.png";
 
 export default {
   heroImg,
@@ -48,4 +52,8 @@ export default {
   robot3,
   colordog,
   banner,
+  space6,
+  metamask,
+  coinbase,
+  walletconnect,
 };
