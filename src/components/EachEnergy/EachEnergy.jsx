@@ -1,6 +1,6 @@
 import AvatarTab from "../AvatarTab/AvatarTab";
 
-const EachNFT = ({ img, energyName, avatarName, img2, price, highestBid,className }) => {
+const EachEnergy = ({ img, energyName, avatarName, img2, price, highestBid,className }) => {
   return (
     <div className={className}>
       <img src={img} alt="" className="w-full h-full" />
@@ -16,13 +16,13 @@ const EachNFT = ({ img, energyName, avatarName, img2, price, highestBid,classNam
         </div>
         <div className="flex justify-between px-4">
           <div className="flex flex-col space-y-1">
-            <p className="text-xs text-backgroundSecondary md:text-base">
+            <p className="text-xs text-backgroundSecondary md:text-sm">
               Price
             </p>
             <p>{price}</p>
           </div>
-          <div className="flex flex-col space-y-1">
-            <p className="text-xs text-backgroundSecondary md:text-base">
+          <div className="flex flex-col space-y-1 md:text-end">
+            <p className="text-xs text-backgroundSecondary md:text-sm">
               Highest Bid
             </p>
             <p>{highestBid}</p>
@@ -33,4 +33,4 @@ const EachNFT = ({ img, energyName, avatarName, img2, price, highestBid,classNam
   );
 };
 
-export default EachNFT;
+export default EachEnergy;
