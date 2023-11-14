@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.0;
 
 
 
@@ -8,13 +8,14 @@ error ServiceMarketplace__CompanyDoesNotExist();
 error ServiceMarketplace__OnlyOwnerCanCallThisFunction();
 error ServiceMarketplace__companyAlreadyExists();
 error ServiceMarketplace__companyDoesNotExist();
+import "@openzeppelin/contracts/access/Ownable.sol";
 /// @title ServiceMarketplace
 /// @author olaoye salem
 /// @notice This smart contract is is the heart of EcoPowerHub. It controls creation of Companies, deposition and appropriation of funds.
 /// @notice This contract allow users to invest in companies and participate in the revenue sharing. 
 
 
-contract ServiceMarketplace {
+contract ServiceMarketplace is Ownable{
     uint256 public  numberOfCompanies;
 
     struct Investor {
@@ -57,7 +58,7 @@ contract ServiceMarketplace {
  
 
 
-    modifier onlyOwner(string memory nameOfCompany) {
+    modifier Owner(string memory nameOfCompany) {
        address owner = nameOfCompanyToOwner[nameOfCompany];
         
         if(msg.sender!=owner){
@@ -166,7 +167,7 @@ contract ServiceMarketplace {
 
         ///@notice This function takes in the serviceAmount and pay the investors based on thier share
 
-    function payForService(string memory companyName) public payable{ 
+    function payForService(string memory companyName) public payable companyDoesNotExist(companyName){ 
           uint256 totalPayout;
 
         for (uint256 i = 0; i < nameToCompany[companyName].numberOfInvestors; i++) {
@@ -188,7 +189,7 @@ contract ServiceMarketplace {
         
     }
 
-    function withdraw( uint _amount, address _address, string memory nameOfCompany) public companyDoesNotExist(nameOfCompany) onlyOwner(nameOfCompany)  {// Now the
+    function withdraw( uint _amount, address _address, string memory nameOfCompany) public companyDoesNotExist(nameOfCompany) Owner(nameOfCompany)  {// Now the
        
        uint256 maxAmount = nameToCompany[nameOfCompany].companyFunds;
         if(_amount <=maxAmount){
@@ -199,7 +200,7 @@ contract ServiceMarketplace {
         emit  withdrawSuccess(_amount, _address,nameToCompany[nameOfCompany]);
     }
 
-    function checkBalanceOfCompany(string memory nameOfCompany) public companyDoesNotExist(nameOfCompany) onlyOwner(nameOfCompany) view returns (uint256) { // for each company
+    function checkBalanceOfCompany(string memory nameOfCompany) public companyDoesNotExist(nameOfCompany) Owner(nameOfCompany) view returns (uint256) { // for each company
         return  nameToCompany[nameOfCompany].companyFunds;
 
     }
