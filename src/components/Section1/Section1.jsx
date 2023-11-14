@@ -16,9 +16,9 @@ const Section1 = () => {
         <Collection
           className="flex flex-col space-y-2 w-full items-start sm:w-1/2 md:w-1/3"
           h3className="font-bold"
-          src1={img.ppp}
-          src2={img.spp}
-          src3={img.spp1}
+          src1={img.colordog}
+          src2={img.cat}
+          src3={img.bigcat}
           a1={img.a1}
           collName={"DSGN Animals"}
           collNum={"1025+"}
@@ -27,9 +27,9 @@ const Section1 = () => {
         <Collection
           className="hidden flex-col space-y-2 items-end sm:flex sm:w-1/2 md:w-1/3 md:items-center"
           h3className="font-bold text-start sm:w-11/12"
-          src1={img.pp2}
-          src2={img.spp}
-          src3={img.spp1}
+          src1={img.mushroom2}
+          src2={img.mushroom2}
+          src3={img.mushroom2}
           a1={img.a1}
           collName={"Magic Mushrooms"}
           collNum={"6+"}
@@ -38,9 +38,9 @@ const Section1 = () => {
         <Collection
           className="flex-col space-y-2 hidden md:flex md:w-1/3"
           h3className="font-bold"
-          src1={img.pp1}
-          src2={img.spp}
-          src3={img.spp1}
+          src1={img.robot3}
+          src2={img.mushroom2}
+          src3={img.robot3}
           a1={img.a1}
           collName={"Disco Machines"}
           collNum={"345+"}

@@ -21,31 +21,31 @@ const Section4 = () => {
       </div>
       <div className="flex flex-col justify-between flex-wrap sm:flex-row">
         <EachEnergy
-          img={img.heroImg}
+          img={img.space2}
           img2={img.a1}
           avatarName="MoonDancer"
           energyName="DistantGalaxy"
           price="1.63ETH"
           highestBid="0.33wETH"
-          className="flex flex-col w-full h-full sm:w-[47%] my-3"
+          className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%]"
         />
         <EachEnergy
-          img={img.heroImg}
+          img={img.img}
           img2={img.a1}
           avatarName="NebulaKid"
           energyName="Life On Edena"
           price="1.63ETH"
           highestBid="0.33wETH"
-          className="flex flex-col w-full h-full sm:w-[47%] my-3"
+          className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%]"
         />
         <EachEnergy
-          img={img.heroImg}
+          img={img.space3}
           img2={img.a1}
           avatarName="SpaceOne"
           energyName="AstroFiction"
           price="1.63ETH"
           highestBid="0.33wETH"
-          className="flex flex-col w-full h-full sm:w-[47%] my-3 sm:hidden md:flex"
+          className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%] sm:hidden md:flex"
         />
         <Button
           className="h-14 p-1 px-4 pt-4 w-full bg-ctaColor rounded-2xl text-center sm:p-4 sm:w-48 sm:hidden"

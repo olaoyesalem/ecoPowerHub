@@ -37,7 +37,7 @@ const HeroSection = () => {
       </div>
       {/* Hero Image */}
       <div className="flex flex-col md:w-1/2 h-72 lg:h-96">
-        <img src={img.heroImg} alt="" className="w-full h-full" />
+        <img src={img.space4} alt="" className="w-full h-full" />
         <div className="flex items-center bg-darkGrey rounded-b-xl">
           <div className="flex flex-col justify-between space-y-2 px-4 py-4">
             <p className="test-lg font-semibold">Space Walking</p>
