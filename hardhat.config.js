@@ -11,6 +11,7 @@ module.exports = {
 
   defaultNetwork:"hardhat",
 
+  
 networks:{
    localHost:{
 			url:LOCAL_HOST_URL,
