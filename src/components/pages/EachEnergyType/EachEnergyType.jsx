@@ -2,15 +2,13 @@ import img from "../../../constants/images";
 import Button from "../../Button/Button";
 import EachEnergy from "../../EachEnergy/EachEnergy";
 
-import React from "react";
-
 const EachEnergyType = () => {
   return (
     <>
       <section>
         <img src={img.space} alt="" className="w-full" />
-        <div className="flex flex-col justify-between flex-wrap sm:flex-row mx-auto py-10 w-5/6 md:w-3/5 md:justify-start lg:w-4/5">
-          <div className="flex flex-col space-y-5">
+            <div className="flex flex-col justify-between flex-wrap sm:flex-row mx-auto py-10 w-5/6 md:w-3/5 md:justify-start lg:w-4/5">
+                <div className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-2">
               <h2 className="font-semibold text-3xl">The Orbitians</h2>
               <p className="font1 text-darkGrey">Minted on Sept 30,2022</p>
@@ -82,7 +80,6 @@ const EachEnergyType = () => {
         <div className="flex flex-col text-start justify-between space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
           <div className="flex flex-col w-full space-y-3 sm:w-3/4">
             <h2 className="text-xl font-semibold md:text-2xl">
-              {" "}
               More From This Artist
             </h2>
           </div>

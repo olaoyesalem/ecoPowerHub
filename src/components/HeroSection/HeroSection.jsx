@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import img from "../../constants/images";
 import AvatarTab from "../AvatarTab/AvatarTab";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (

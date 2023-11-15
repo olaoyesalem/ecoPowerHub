@@ -4,7 +4,7 @@ import img from "../../constants/images";
 
 const Section4 = () => {
   return (
-    <section4 className="flex flex-col space-y-8 my-20 w-4/5 mx-auto md:w-5/6">
+    <section className="flex flex-col space-y-8 my-20 w-4/5 mx-auto md:w-5/6">
       <div className="flex flex-col text-start justify-between space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
         <div className="flex flex-col w-full space-y-3 sm:w-3/4">
           <h2 className="text-xl font-semibold md:text-2xl">
@@ -54,7 +54,7 @@ const Section4 = () => {
           See All
         </Button>
       </div>
-    </section4>
+    </section>
   );
 };
 
