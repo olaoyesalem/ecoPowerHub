@@ -1,6 +1,6 @@
 import Tab from "../../Tab/Tab";
-import EachEnergy from "../../EachEnergy/EachEnergy"
-import img from "../../../constants/images"
+import EachEnergy from "../../EachEnergy/EachEnergy";
+import img from "../../../constants/images";
 const MarketPlace = () => {
   return (
     <>
@@ -21,116 +21,114 @@ const MarketPlace = () => {
         <Tab tabTitle="Collections" num="67" />
       </div>
       <section className="flex flex-col justify-between flex-wrap sm:flex-row mx-auto py-10 w-5/6">
-      
-          <EachEnergy
-            img={img.space2}
-            img2={img.a1}
-            avatarName="MoonDancer"
-            energyName="DistantGalaxy"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
-          />
-          <EachEnergy
-            img={img.img}
-            img2={img.a1}
-            avatarName="NebulaKid"
-            energyName="Life On Edena"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="hidden flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="hidden flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="hidden flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
-          />
-          <EachEnergy
-            img={img.space3}
-            img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
-            className="hidden flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
-          />
-       
+        <EachEnergy
+          img={img.mushroom}
+          img2={img.a1}
+          avatarName="MoonDancer"
+          energyName="DistantGalaxy"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
+        />
+        <EachEnergy
+          img={img.robot}
+          img2={img.a1}
+          avatarName="NebulaKid"
+          energyName="Life On Edena"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
+        />
+        <EachEnergy
+          img={img.robot2}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
+        />
+        <EachEnergy
+          img={img.bigcat}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
+        />
+        <EachEnergy
+          img={img.colordog}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
+        />
+        <EachEnergy
+          img={img.robot3}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
+        />
+        <EachEnergy
+          img={img.girl}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
+        />
+        <EachEnergy
+          img={img.cloud}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
+        />
+        <EachEnergy
+          img={img.space4}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="hidden flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
+        />
+        <EachEnergy
+          img={img.monkey}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="hidden flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
+        />
+        <EachEnergy
+          img={img.dog2}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="hidden flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
+        />
+        <EachEnergy
+          img={img.catman}
+          img2={img.a1}
+          avatarName="SpaceOne"
+          energyName="AstroFiction"
+          price="1.63ETH"
+          highestBid="0.33wETH"
+          className="hidden flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
+        />
       </section>
     </>
   );

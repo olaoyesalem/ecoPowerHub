@@ -24,9 +24,9 @@ const Footer = () => {
             Explore
           </h4>
           <div className="flex flex-col space-y-2 text-sm">
-            <a href="">Marketplace</a>
-            <a href="">Rankings</a>
-            <a href="">Connect a wallet</a>
+            <a href="#">Marketplace</a>
+            <a href="#">Rankings</a>
+            <a href="#">Connect a wallet</a>
           </div>
         </div>
         <div className="flex flex-col space-y-3 text-darkGrey md:w-[42%] md:space-y-5">
@@ -37,22 +37,22 @@ const Footer = () => {
             Get exclusive promotions and updates straight into your inbox.
           </p>
           <form>
-            <div class="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-3">
               <input
                 type="text"
-                class="flex-1 px-6 py-2 rounded-3xl text-sm font-semibold focus:outline-none md:hidden"
+                className="flex-1 px-6 py-2 rounded-3xl text-sm font-semibold focus:outline-none md:hidden"
                 placeholder="Enter your email here"
               />
-              <button class="px-6 py-2 text-white rounded-3xl text-sm font-semibold bg-ctaColor focus:outline-none md:hidden">
+              <button className="px-6 py-2 text-white rounded-3xl text-sm font-semibold bg-ctaColor focus:outline-none md:hidden">
                 Subscribe
               </button>
               <div className="w-full hidden md:flex">
                 <input
                   type="text"
-                  class="flex-1 px-6 py-3 rounded-l-xl text-sm font-semibold focus:outline-none"
+                  className="flex-1 px-6 py-3 rounded-l-xl text-sm font-semibold focus:outline-none"
                   placeholder="Enter your email here"
                 />
-                <button class="px-6 py-3 text-white rounded-xl -ml-4 text-sm font-semibold bg-ctaColor focus:outline-none">
+                <button className="px-6 py-3 text-white rounded-xl -ml-4 text-sm font-semibold bg-ctaColor focus:outline-none">
                   Subscribe
                 </button>
               </div>

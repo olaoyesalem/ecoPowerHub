@@ -13,7 +13,7 @@ const NavBar = () => {
           <a href="#">Rankings</a>
           <a href="#">Connect a wallet</a>
         </div>
-        <Button className={"py-4 px-8 bg-ctaColor rounded-2xl"} href="#">Sign Up</Button>
+        <Button className="py-4 px-8 bg-ctaColor rounded-2xl" href="#">Sign Up</Button>
       </div>
     </nav>
   );

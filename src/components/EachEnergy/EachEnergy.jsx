@@ -16,16 +16,14 @@ const EachEnergy = ({ img, energyName, avatarName, img2, price, highestBid,class
         </div>
         <div className="flex justify-between px-4">
           <div className="flex flex-col space-y-1">
-            <p className="text-xs text-backgroundSecondary md:text-sm">
-              Price
-            </p>
-            <p>{price}</p>
+            <p className="text-xs text-backgroundSecondary md:text-sm">Price</p>
+            <p className="text-sm">{price}</p>
           </div>
-          <div className="flex flex-col space-y-1 md:text-end">
+          <div className="flex flex-col space-y-1 sm:text-end">
             <p className="text-xs text-backgroundSecondary md:text-sm">
               Highest Bid
             </p>
-            <p>{highestBid}</p>
+            <p className="text-sm">{highestBid}</p>
           </div>
         </div>
       </div>

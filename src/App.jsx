@@ -7,13 +7,15 @@ import NavBar from "./components/NavBar/Navbar.jsx";
 // import Section5 from "./components/Section5/Section5.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 // import CreateAccount from "./components/pages/CreateAccount/CreateAccount.jsx";
-import MarketPlace from "./components/pages/MarketPlace/MarketPlace.jsx";
+// import MarketPlace from "./components/pages/MarketPlace/MarketPlace.jsx";
+import EachEnergyType from "./components/pages/EachEnergyType/EachEnergyType.jsx";
 
 const App = () => {
   return (
     <>
       <NavBar />
-      <MarketPlace/>
+      <EachEnergyType/>
+      {/* <MarketPlace/> */}
       {/* <CreateAccount/> */}
       {/* <HeroSection />
       <Section1 />
