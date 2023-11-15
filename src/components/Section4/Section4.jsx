@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import EachEnergy from "../EachEnergy/EachEnergy";
 import img from "../../constants/images";
+import { IoEyeOutline } from "react-icons/io5";
 
 const Section4 = () => {
   return (
@@ -13,10 +14,13 @@ const Section4 = () => {
           <p className="text-sm md:text-base">Explore New Trending NFTs</p>
         </div>
         <Button
-          className="hidden h-14 p-2 px-4 md:pt-4 w-full bg-ctaColor rounded-2xl text-center sm:p-4 sm:w-48 sm:block"
+          className="hidden h-14 p-2 px-4 md:pt-4 w-full border border-ctaColor items-center space-x-4 text-lg rounded-2xl text-center sm:p-4 sm:w-48 sm:flex"
           href="#"
         >
-          See All
+          <span className="text-ctaColor">
+            <IoEyeOutline />
+          </span>
+          <span>See All</span>
         </Button>
       </div>
       <div className="flex flex-col justify-between flex-wrap sm:flex-row">
@@ -48,10 +52,11 @@ const Section4 = () => {
           className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%] sm:hidden md:flex"
         />
         <Button
-          className="h-14 p-1 px-4 pt-4 w-full bg-ctaColor rounded-2xl text-center sm:p-4 sm:w-48 sm:hidden"
+          className="h-14 p-1 px-4 pt-4 w-full border border-ctaColor rounded-2xl flex items-center space-x-4 text-center sm:p-4 sm:w-48 sm:hidden"
           href="#"
         >
-          See All
+          <IoEyeOutline />
+          <span>See All</span>
         </Button>
       </div>
     </section>

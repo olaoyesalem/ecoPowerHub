@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import Creator from "../Creator/Creator";
 import img from "../../constants/images";
+import { PiAirplaneTiltBold } from "react-icons/pi";
 
 const Section2 = () => {
   return (
@@ -13,10 +14,13 @@ const Section2 = () => {
           </p>
         </div>
         <Button
-          className="hidden h-14 p-2 px-4 md:pt-4 w-full bg-ctaColor rounded-2xl text-center sm:p-4 sm:w-48 sm:block"
+          className="hidden items-center space-x-2 h-14 p-2 px-4 md:pt-4 w-full border border-ctaColor rounded-2xl text-center sm:p-4 sm:w-48 sm:flex"
           href="#"
         >
-          View Rankings
+          <span className="text-ctaColor">
+            <PiAirplaneTiltBold />
+          </span>
+          <span>View Rankings</span>
         </Button>
       </div>
       <div className="flex flex-col justify-between flex-wrap sm:flex-row">
@@ -105,7 +109,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0 hidden md:flex"
         />
         <Button
-          className="h-14 p-1 px-4 pt-4 w-full bg-ctaColor rounded-2xl text-center sm:hidden"
+          className="h-14 p-1 px-4 pt-4 w-full border border-ctaColor rounded-2xl text-center sm:hidden"
           href="#"
         >
           View Rankings

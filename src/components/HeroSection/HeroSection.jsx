@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import img from "../../constants/images";
 import AvatarTab from "../AvatarTab/AvatarTab";
+import { PiAirplaneTiltBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -16,10 +17,11 @@ const HeroSection = () => {
           Art From More Than 20k NFT Artists.
         </p>
         <Button
-          className="hidden px-8 p-2 pt-2 w-full bg-ctaColor rounded-2xl text-center sm:w-40 md:block"
+          className="hidden px-6 p-2 pt-2 w-full bg-ctaColor rounded-2xl text-center items-center space-x-1 sm:w-40 md:flex"
           href="#"
         >
-          Get Started
+          <PiAirplaneTiltBold />
+          <span>Get Started</span>
         </Button>
         <div className="flex justify-between w-full md:w-4/5">
           <div className="flex flex-col">
@@ -42,7 +44,12 @@ const HeroSection = () => {
         <div className="flex items-center bg-darkGrey rounded-b-xl">
           <div className="flex flex-col justify-between space-y-2 px-4 py-4">
             <p className="test-lg font-semibold">Space Walking</p>
-            <AvatarTab src={img.a1} alt="" avatarName="Animakid" className="flex space-x-2"></AvatarTab>
+            <AvatarTab
+              src={img.a1}
+              alt=""
+              avatarName="Animakid"
+              className="flex space-x-2"
+            ></AvatarTab>
           </div>
         </div>
       </div>
