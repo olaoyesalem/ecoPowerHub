@@ -90,4 +90,4 @@ export default Footer;
 // import { PiCopyLight } from "react-icons/pi";  <PiCopyLight />;
 // import { HiPlus } from "react-icons/hi2";  <HiPlus />;
 
-// import { FaBarsStaggered } from "react-icons/fa6";  <FaBarsStaggered />;
+
