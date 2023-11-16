@@ -1,19 +1,23 @@
 import Tab from "../../Tab/Tab";
 import EachEnergy from "../../EachEnergy/EachEnergy";
 import img from "../../../constants/images";
+import { CiSearch } from "react-icons/ci";
+
 const MarketPlace = () => {
   return (
     <>
       <section className="flex flex-col space-y-6 mt-20 mb-14 w-4/5 mx-auto md:w-5/6">
         <h1 className="text-4xl font-semibold">Browse Marketplace</h1>
         <p>Browse through more than 50k NFTs on the NFT Marketplace.</p>
-        <div className="flex">
+        <div className="flex items-center border border-darkGrey rounded-full px-4">
           <input
             type="text"
             className="p-4 w-full rounded-md bg-transparent focus:outline-none"
             placeholder="Search your favourite NFTs"
           />
-          <i></i>
+          <button className="text-3xl text-textColor">
+            <CiSearch />
+          </button>
         </div>
       </section>
       <div className="flex mx-auto md:w-5/6">

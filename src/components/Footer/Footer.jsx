@@ -89,5 +89,5 @@ export default Footer;
 // import { CiGlobe } from "react-icons/ci";  <CiGlobe />;
 // import { PiCopyLight } from "react-icons/pi";  <PiCopyLight />;
 // import { HiPlus } from "react-icons/hi2";  <HiPlus />;
-// import { CiSearch } from "react-icons/ci";  <CiSearch />
+
 // import { FaBarsStaggered } from "react-icons/fa6";  <FaBarsStaggered />;

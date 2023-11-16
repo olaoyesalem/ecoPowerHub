@@ -31,7 +31,8 @@ const Section4 = () => {
           energyName="DistantGalaxy"
           price="1.63ETH"
           highestBid="0.33wETH"
-          className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%]"
+          className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%] cursor-pointer"
+          href="energy"
         />
         <EachEnergy
           img={img.img}
@@ -40,7 +41,8 @@ const Section4 = () => {
           energyName="Life On Edena"
           price="1.63ETH"
           highestBid="0.33wETH"
-          className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%]"
+          className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%] cursor-pointer"
+          href="energy"
         />
         <EachEnergy
           img={img.space3}
@@ -49,7 +51,8 @@ const Section4 = () => {
           energyName="AstroFiction"
           price="1.63ETH"
           highestBid="0.33wETH"
-          className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%] sm:hidden md:flex"
+          className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%] sm:hidden md:flex cursor-pointer"
+          href="energy"
         />
         <Button
           className="h-14 p-1 px-4 pt-4 w-full border border-ctaColor rounded-2xl flex items-center space-x-4 text-center sm:p-4 sm:w-48 sm:hidden"

@@ -1,8 +1,18 @@
 import AvatarTab from "../AvatarTab/AvatarTab";
 
-const EachEnergy = ({ img, energyName, avatarName, img2, price, highestBid,className }) => {
+const EachEnergy = ({
+  img,
+  energyName,
+  avatarName,
+  img2,
+  price,
+  highestBid,
+  className,
+  href
+}) => {
+
   return (
-    <div className={className}>
+    <a className={className} href={href}>
       <img src={img} alt="" className="w-full h-full" />
       <div className="font1 flex flex-col bg-darkGrey rounded-b-xl space-y-2 py-4">
         <div className="flex flex-col justify-between px-4">
@@ -27,7 +37,7 @@ const EachEnergy = ({ img, energyName, avatarName, img2, price, highestBid,class
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

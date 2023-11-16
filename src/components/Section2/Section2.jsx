@@ -25,6 +25,7 @@ const Section2 = () => {
       </div>
       <div className="flex flex-col justify-between flex-wrap sm:flex-row">
         <Creator
+        href="user"
           src={img.a1}
           creatorName="Keepitreal"
           salesAmt="34.57"
@@ -32,6 +33,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="DigiLab"
           salesAmt="34.57"
@@ -39,6 +41,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="GravityOne"
           salesAmt="34.57"
@@ -46,6 +49,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="Juanie"
           salesAmt="34.57"
@@ -53,6 +57,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="BlueWhale"
           salesAmt="34.57"
@@ -60,6 +65,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="MrFox"
           salesAmt="34.57"
@@ -67,6 +73,7 @@ const Section2 = () => {
           className="flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0 hidden sm:flex"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="Shroomie"
           salesAmt="34.57"
@@ -74,6 +81,7 @@ const Section2 = () => {
           className="flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0 hidden md:flex"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="Robotica"
           salesAmt="34.87"
@@ -81,6 +89,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0 hidden md:flex"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="RustyRobot"
           salesAmt="34.57"
@@ -88,6 +97,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0 hidden md:flex"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="Animakid"
           salesAmt="34.57"
@@ -95,6 +105,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0 hidden md:flex"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="Dotgu"
           salesAmt="34.57"
@@ -102,6 +113,7 @@ const Section2 = () => {
           className="flex flex-row p-4 space-x-3 bg-backgroundSecondary w-full rounded-xl items-center my-3 sm:p-2 sm:w-[48%] md:w-[22%] md:flex-col md:space-x-0 hidden md:flex"
         />
         <Creator
+        href="user"
           src={img.a1}
           creatorName="Ghiblier"
           salesAmt="34.57"
@@ -111,8 +123,9 @@ const Section2 = () => {
         <Button
           className="h-14 p-1 px-4 pt-4 w-full border border-ctaColor rounded-2xl text-center sm:hidden"
           href="#"
-        >
-          View Rankings
+        ><span className="text-ctaColor">
+            View Rankings
+            </span>
         </Button>
       </div>
     </section>
