@@ -1,7 +1,6 @@
 import Button from "../Button/Button";
 import { FaShop } from "react-icons/fa6";
 import { GoPerson } from "react-icons/go";
-import { FaBarsStaggered } from "react-icons/fa6";
 import { useState } from "react";
 
 const NavBar = () => {
@@ -57,7 +56,7 @@ const NavBar = () => {
           Connect a wallet
         </a>
       </div>
-      <div className="hidden justify-center justify-between items-center w-1/2  lg:space-x-4 md:text-sm xxl:w-1/2 lg:text-base md:w-3/5 lg:w-3/5 lg:flex">
+      <div className="hidden justify-center justify-between items-center w-1/2 lg:space-x-4 md:text-sm xxl:w-1/2 lg:text-base md:w-3/5 lg:w-3/5 lg:flex">
         <a href="marketplace" className="font1">
           Marketplace
         </a>
