@@ -13,7 +13,7 @@ const EachEnergy = ({
 
   return (
     <a className={className} href={href}>
-      <img src={img} alt="" className="w-full h-full" />
+      <img src={img} alt="" className="w-full h-3/5" />
       <div className="font1 flex flex-col bg-darkGrey rounded-b-xl space-y-2 py-4">
         <div className="flex flex-col justify-between px-4">
           <p className="test-lg font-semibold">{energyName}</p>

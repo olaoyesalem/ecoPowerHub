@@ -11,7 +11,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="relative mx-auto my-4 flex justify-between items-center w-11/12">
+    <nav className="relative z-50 mx-auto my-4 flex justify-between items-center w-11/12">
       <div id="logoCont" className="flex items-center space-x-2">
         <span className="text-ctaColor">
           <FaShop />
@@ -22,18 +22,18 @@ const NavBar = () => {
       </div>
       <button
         id="menu-btn"
-        class={`block hamburger lg:hidden focus:outline-none ${
+        className={`block hamburger lg:hidden focus:outline-none ${
           isMenuOpen === false ? "" : "open"
         }`}
         onClick={onMenuClick}
       >
-        <span class="hamburger-top"></span>
-        <span class="hamburger-middle"></span>
-        <span class="hamburger-bottom"></span>
+        <span className="hamburger-top"></span>
+        <span className="hamburger-middle"></span>
+        <span className="hamburger-bottom"></span>
       </button>
       <div
         id="menu"
-        class={`absolute flex flex-col items-center self-end py-6 top-14 space-y-4 font-bold bg-black text-darkGrey sm:w-auto sm:self-center left-6 right-6 drop-shadow-md ${
+        className={`absolute flex flex-col items-center self-end py-6 top-14 space-y-4 font-bold bg-black text-darkGrey sm:w-auto sm:self-center left-6 right-6 drop-shadow-md ${
           isMenuOpen === false ? "" : "flex"
         } ${isMenuOpen === false ? "hidden" : ""}`}
       >
@@ -55,6 +55,13 @@ const NavBar = () => {
         >
           Connect a wallet
         </a>
+        <Button
+          className="py-4 px-5 rounded-2xl rounded-full flex items-center space-x-2 hover:border border-ctaColor"
+          href="#"
+        >
+          <GoPerson />
+          <span>Sign Up</span>
+        </Button>
       </div>
       <div className="hidden justify-center justify-between items-center w-1/2 lg:space-x-4 md:text-sm xxl:w-1/2 lg:text-base md:w-3/5 lg:w-3/5 lg:flex">
         <a href="marketplace" className="font1">
