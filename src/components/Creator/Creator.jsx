@@ -1,4 +1,5 @@
 import img from "../../constants/images";
+import Button from "../Button/Button";
 
 const Creator = ({ creatorName, salesAmt, creatorNum, className, href }) => {
   return (
@@ -14,7 +15,10 @@ const Creator = ({ creatorName, salesAmt, creatorNum, className, href }) => {
         />
       </div>
       <div className="flex flex-col space-y-2 sm:space-y-1 items-center">
-        <h4 className="font-semibold">{creatorName}</h4>
+        {/* <div className="flex justify-between w-full items-center"> */}
+          <h4 className="font-semibold">{creatorName}</h4>
+          {/* <Button className="bg-ctaColor rounded-full p-1">Invest</Button> */}
+        {/* </div> */}
         <p className="text-sm sm:text-xs md:text-[0.6rem]">
           <span className="text-darkGrey mr-2 md:mr-1">Total Sales:</span>
           <span className="font1">{salesAmt} Toro</span>

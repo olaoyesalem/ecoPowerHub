@@ -7,7 +7,7 @@ const Register = ({ src, pageHead, pageText1, pageText2, children }) => {
         <img src={src} alt="" className="w-full h-full" />
       </div>
       <div className="flex justify-start space-y-3 py-8 w-full md:w-[45%]">
-        <div className="flex flex-col justify-center mx-auto sm:w-3/5 md:w-4/5">
+        <div className="flex flex-col space-y-5 justify-center mx-auto sm:w-3/5 md:w-4/5">
           <div className="flex flex-col space-y-3">
             <h2 className="font-semibold text-3xl md:text-4xl">{pageHead}</h2>
             <div className="flex flex-col">

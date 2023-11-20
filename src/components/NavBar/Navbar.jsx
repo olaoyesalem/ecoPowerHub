@@ -47,7 +47,7 @@ const NavBar = () => {
           href="#"
           className="font1 p-3 rounded-full hover:border border-ctaColor"
         >
-          Rankings
+          Login
         </a>
         <a
           href="connect-wallet"

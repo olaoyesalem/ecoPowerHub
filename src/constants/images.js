@@ -1,6 +1,11 @@
 import heroImg from "../assets/space5.png";
 import hero from "../assets/hero.jpg"
 import a1 from "../assets/a1.png";
+import a2 from "../assets/a2.png";
+import a3 from "../assets/a3.jpg";
+import a4 from "../assets/a4.jpg";
+import a5 from "../assets/a5.jpg";
+import a6 from "../assets/a6.jpg";
 import icon from "../assets/Icon.png";
 import img from "../assets/Image.png";
 import bigcat from "../assets/bigcat.png";
@@ -32,6 +37,8 @@ export default {
   heroImg,
   hero,
   a1,
+  a2,
+  a3,a4,a5,a6,
   icon,
   img,
   dog2,

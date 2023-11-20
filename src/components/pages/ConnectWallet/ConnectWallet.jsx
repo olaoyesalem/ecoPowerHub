@@ -1,5 +1,6 @@
 import img from "../../../constants/images";
 import Button from "../../Button/Button";
+import { ConnectButton } from "@web3uikit/web3";
 import Register from "../../Register/Register";
 
 const ConnectWallet = () => {
@@ -11,7 +12,8 @@ const ConnectWallet = () => {
       pageText2="There are several wallet providers."
     >
       <>
-        <Button
+        <ConnectButton />
+        {/* <Button
           className="px-8 p-4 pt-4 w-full font-semibold bg-ctaColor rounded-2xl text-center lg:w-3/5"
           href="#"
         >
@@ -37,7 +39,7 @@ const ConnectWallet = () => {
             <img src={img.coinbase} alt="" className="h-8 w-8" />
             <span>Coinbase</span>
           </div>
-        </Button>
+        </Button> */}
       </>
     </Register>
   );

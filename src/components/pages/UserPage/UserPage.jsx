@@ -24,7 +24,9 @@ const UserPage = () => {
       <section className="flex flex-col space-y-8 mt-20 mb-6 w-4/5 mx-auto">
         <div className="flex flex-col text-start justify-between lg:items-center space-y-6 lg:flex-row lg:space-y-0">
           <div className="flex flex-col w-full space-y-3 sm:w-3/4">
-            <h2 className="text-2xl font-semibold sm:text-3xl">Animakid</h2>
+            <h2 className="text-2xl font-semibold sm:text-3xl">
+              EnRyze Energy Exchange
+            </h2>
           </div>
           <div className="flex flex-col space-y-5 sm:flex-row sm:space-y-0 sm:space-x-3">
             <Button
@@ -102,79 +104,79 @@ const UserPage = () => {
             avatarName="MoonDancer"
             energyName="DistantGalaxy"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
           />
           <EachEnergy
-            img={img.robot}
+            img={img.a2}
             img2={img.a1}
             avatarName="NebulaKid"
             energyName="Life On Edena"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
           />
           <EachEnergy
-            img={img.robot2}
-            img2={img.a1}
+            img={img.a3}
+            img2={img.a2}
             avatarName="SpaceOne"
             energyName="AstroFiction"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="flex-col w-full my-3 h-72 sm:w-[45%] md:w-[30%] sm:flex"
           />
           <EachEnergy
-            img={img.bigcat}
+            img={img.a4}
             img2={img.a1}
             avatarName="SpaceOne"
             energyName="AstroFiction"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] sm:flex"
           />
           <EachEnergy
-            img={img.colordog}
+            img={img.a5}
             img2={img.a1}
-            avatarName="SpaceOne"
+            avatarName="EnRyze Energy Exchange"
             energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
+            price="1.63Toro"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] sm:flex"
           />
           <EachEnergy
-            img={img.robot3}
+            img={img.a2}
             img2={img.a1}
-            avatarName="SpaceOne"
+            avatarName="RenewEcon Exchange"
             energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
+            price="1.63Toro"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] sm:flex"
           />
           <EachEnergy
-            img={img.girl}
+            img={img.a3}
             img2={img.a1}
-            avatarName="SpaceOne"
+            avatarName="RenewSource Marketplace"
             energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
+            price="1.63Toro"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
           />
           <EachEnergy
-            img={img.cloud}
+            img={img.a4}
             img2={img.a1}
-            avatarName="SpaceOne"
+            avatarName="EnergyHarbor Hub"
             energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
+            price="1.63Toro"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
           />
           <EachEnergy
-            img={img.space4}
+            img={img.a5}
             img2={img.a1}
-            avatarName="SpaceOne"
+            avatarName="EcoSpark Trading"
             energyName="AstroFiction"
-            price="1.63ETH"
-            highestBid="0.33wETH"
+            price="1.63T"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
           />
         </div>

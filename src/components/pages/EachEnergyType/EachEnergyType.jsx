@@ -7,8 +7,8 @@ const EachEnergyType = () => {
     <>
       <section>
         <img src={img.space} alt="" className="w-full" />
-            <div className="flex flex-col justify-between flex-wrap sm:flex-row mx-auto py-10 w-5/6 md:w-3/5 md:justify-start lg:w-4/5">
-                <div className="flex flex-col space-y-5">
+        <div className="flex flex-col justify-between flex-wrap sm:flex-row mx-auto py-10 w-5/6 md:w-3/5 md:justify-start lg:w-4/5">
+          <div className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-2">
               <h2 className="font-semibold text-3xl">The Orbitians</h2>
               <p className="font1 text-darkGrey">Minted on Sept 30,2022</p>
@@ -94,82 +94,82 @@ const EachEnergyType = () => {
           <EachEnergy
             img={img.mushroom}
             img2={img.a1}
-            avatarName="MoonDancer"
+            avatarName="PowerHub Connect"
             energyName="DistantGalaxy"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
           />
           <EachEnergy
             img={img.robot}
             img2={img.a1}
-            avatarName="NebulaKid"
-            energyName="Life On Edena"
+            avatarName="EnergyTrade Pro"
+            energyName="Solar"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="flex flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%]"
           />
           <EachEnergy
             img={img.robot2}
             img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
+            avatarName="EcoGrid Solutions"
+            energyName="Hydro"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] sm:flex"
           />
           <EachEnergy
             img={img.bigcat}
             img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
+            avatarName="RenewaMarket"
+            energyName="Solar"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] sm:flex"
           />
           <EachEnergy
             img={img.colordog}
             img2={img.a1}
-            avatarName="SpaceOne"
+            avatarName="VoltLink Exchange"
             energyName="AstroFiction"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] sm:flex"
           />
           <EachEnergy
             img={img.robot3}
             img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
+            avatarName="GreenerGrid Hub"
+            energyName="Biogas"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] sm:flex"
           />
           <EachEnergy
             img={img.girl}
             img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
+            avatarName="EcoWatt Marketplace"
+            energyName="Hydrogen Energy"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
           />
           <EachEnergy
             img={img.cloud}
             img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
+            avatarName="CleanCurrent Connect"
+            energyName="Wind Energy"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
           />
           <EachEnergy
             img={img.space4}
             img2={img.a1}
-            avatarName="SpaceOne"
-            energyName="AstroFiction"
+            avatarName="WattFlow Networke"
+            energyName="Solar Energy"
             price="1.63ETH"
-            highestBid="0.33wETH"
+            highestBid="0.33Toro"
             className="hidden flex-col w-full h-72 my-3 sm:w-[45%] md:w-[30%] md:flex"
           />
         </div>

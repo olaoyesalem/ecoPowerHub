@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useMoralis } from "react-moralis";
+
 import NavBar from "./components/NavBar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import UserPage from "./components/pages/UserPage/UserPage.jsx";
@@ -11,18 +13,20 @@ import HomePage from "./components/pages/HomePage/HomePage.jsx";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
-  const [energyProjects, setenergyProjects] = useState([]);
+  const { isWeb3Enabled } = useMoralis();
 
-  useEffect(() => {
-    const fetchEnergyProjects = async () => {
-      let response = await axios.get(
-        "https://ecopowerhub-backend-production.up.railway.app/marketplace"
-      );
-      setenergyProjects(response.data);
-    };
-    fetchEnergyProjects();
-    console.log(energyProjects);
-  }, []);
+  // const [energyProjects, setenergyProjects] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchEnergyProjects = async () => {
+  //     let response = await axios.get(
+  //       "https://ecopowerhub-backend-production.up.railway.app/marketplace"
+  //     );
+  //     setenergyProjects(response.data);
+  //   };
+  //   fetchEnergyProjects();
+  //   console.log(energyProjects);
+  // }, []);
 
   return (
     <>

@@ -1,10 +1,5 @@
-import ecopowerhub_backend from "../../api/ecopowerhub_backend"
-import { useEffect } from "react";
 import Categories from "../Categories/Categories";
-import img from "../../constants/images"
-
- 
-
+import img from "../../constants/images";
 
 const Section3 = () => {
   return (
@@ -22,6 +17,6 @@ const Section3 = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Section3
+export default Section3;
