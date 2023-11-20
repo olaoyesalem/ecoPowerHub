@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
 # EcoPowerHub 🌱💡
 EcoPowerHub: Empowering Tomorrow, One Watt at a Time on ToroNet
 ## Welcome to EcoPowerHub
@@ -77,12 +68,11 @@ Our diverse team is passionate about creating positive change. Meet the brillian
 
  * #### Members Role
 
-   - **OLAOYE SALEM IYANULOLUWA:** Responsible for writing and deploying smart contract;
+   - **OLAOYE SALEM IYANULOLUWA:**Team Lead;  Responsible for writing and deploying smart contract;
    - **OGBONNAYA CHINONYEREM JOHNSON:** Responsible for Writing the front-end;
    - **IVOR EDAFE:** Responsible for co-writing backend;
    - **OLUBADEJO CORNELIUS:** Responsible for co-writing backend;
 
->>>>>>> f986db3adce13474a2828a6b7cf132d0b1897c9c
 
 ## Connect with Us
 
@@ -104,9 +94,9 @@ The EcoPowerHub smart contract is deployed on the ToroNet TestNet [(https://test
 - Backend: python and Django Rest
 - Blockchain: ToroNet
 
-## Front-End Repo
-<br>
+
 ## BackEnd Repo
+https;//github.com/ivoreda/ecoPowerHub-backend
 
 <br>
 ## Prerequisites ✅
@@ -121,6 +111,7 @@ Ensure you have the following installed:
 
 ## Video Link
 <br>
+
 ## Tweet Link
 <br>
 
@@ -128,4 +119,4 @@ Ensure you have the following installed:
  ## License
  MIT License
 
->>>>>>> e93fff39b430064264578f60f5dc3b3256387f68
+
