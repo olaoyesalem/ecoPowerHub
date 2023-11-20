@@ -6,8 +6,11 @@ pragma solidity ^0.8.0;
 error ServiceMarketplace__TotalSharesShouldBbeGreaterThanBuyableShares();
 error ServiceMarketplace__CompanyDoesNotExist();
 error ServiceMarketplace__OnlyOwnerCanCallThisFunction();
-error ServiceMarketplace__companyAlreadyExists();
-error ServiceMarketplace__companyDoesNotExist();
+error ServiceMarketplace__companyNameTaken();
+error ServiceMarketplace__AddressCannotCreateTwoCompanies();
+error ServiceMarketplace__NullAddress();
+
+
 import "@openzeppelin/contracts/access/Ownable.sol";
 /// @title ServiceMarketplace
 /// @author olaoye salem
@@ -16,11 +19,17 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 contract ServiceMarketplace is Ownable{
+
+
+    /** STATE VARIABLES **/
+    
+    
     uint256 public  numberOfCompanies;
 
     struct Investor {
         uint256 investedAmount;
         uint256 sharePercentage;
+        address investorAddress;
     }
 
     struct Company{
@@ -34,32 +43,46 @@ contract ServiceMarketplace is Ownable{
        uint256 numberOfInvestors;
        address owner;
        address [] investors;
+       uint256 id;
 
     }
-
-    Company [] public  companiesList;
     address [] public  companiesAddress;
-    address[] public investorAddresses; 
-    bytes [] private   encodedNameList; 
+    address[]public  companyOwners;
+    Company [] private  companiesList;
+    uint256 [] private  idList;
+    bytes [] private encodedNameList;
+    Investor [] private  investors;
     
 
     /** EVENTS */
-    event newInvestor( address indexed investor,  uint256 indexed percentage, Company indexed  company);
+    event newInvestor( Investor indexed investor,  uint256 indexed percentage, Company indexed  company);
     event ServicePaymentProcessed( uint256 indexed amountPaid, Company indexed company);
     event withdrawSuccess( uint256 indexed amount , address indexed addressTo , Company indexed company);
-    event CompanyCreated(string indexed  name, uint256 indexed totalCompanyValue, uint256 indexed  totalShares, uint256  sharePrice, uint256   buyableShares, address owner );
+    event CompanyCreated(string indexed  name, uint256 indexed totalCompanyValue, uint256 indexed  totalShares, uint256  sharePrice, uint256   buyableShares, address owner, uint256 id );
 
     /** MAPPINGS **/
 
-    mapping(string => mapping (address => Investor) ) public companyNameToInvestors; 
-    mapping (string => Company) public nameToCompany;
-    mapping (string => address) public  nameOfCompanyToOwner;
-    mapping  (string => bool) public  nameExists;
+    mapping(uint256 => mapping (address => Investor) ) public companyIdToInvestors; 
+    mapping (uint256 => Company) public  idToCompany;
+    mapping (uint256 => address) private  idToOwner;
  
+/** MODIFIER **/
+
+  modifier companyNameTaken (string memory nameOfCompany) {
+        bytes memory encodedName = abi.encode(nameOfCompany);
+        for (uint256 i=0; i<encodedNameList.length;i++){
+            if( compareBytes(encodedName,encodedNameList[i])){
+                revert ServiceMarketplace__companyNameTaken(); 
+            }
+        }
 
 
-    modifier Owner(string memory nameOfCompany) {
-       address owner = nameOfCompanyToOwner[nameOfCompany];
+        _;
+    }
+
+
+    modifier Owner(uint256 id) {
+       address owner = idToOwner[id];
         
         if(msg.sender!=owner){
             revert ServiceMarketplace__OnlyOwnerCanCallThisFunction();
@@ -68,33 +91,53 @@ contract ServiceMarketplace is Ownable{
         _;
     }
 
-    modifier companyExist (string memory nameOfCompany) {
-        bytes memory encodedName = abi.encode(nameOfCompany);
-        for (uint256 i=0; i<encodedNameList.length;i++){
-            if( compareBytes(encodedName,encodedNameList[i])){
-                revert ServiceMarketplace__companyAlreadyExists(); 
+   modifier addressCanCreateOnce() {
+        for (uint256 i = 0; i < companyOwners.length; i++) {
+            if(companyOwners[i] == msg.sender){
+                revert ServiceMarketplace__AddressCannotCreateTwoCompanies(); 
             }
+           
         }
-
-
         _;
     }
 
-    modifier companyDoesNotExist(string memory nameOfCompany) {
-    bytes memory encodedName = abi.encode(nameOfCompany);
-    bool exists = false;
-    for (uint256 i = 0; i < encodedNameList.length; i++) {
-        if (compareBytes(encodedName, encodedNameList[i])) {
-            exists = true;
-            break;
+
+    modifier companyDoesNotExist(uint256 id) {  
+  
+        if(id>numberOfCompanies-1 || id<0 ){
+            revert ServiceMarketplace__CompanyDoesNotExist(); 
         }
-    }
-    if (!exists) {
-        revert ServiceMarketplace__companyDoesNotExist();
+   
+    _;
+}
+
+modifier  TotalSharesGreaterThanBuyableShares( uint256 _buyableShares, uint256 _totalShares){
+        if(_buyableShares>= _totalShares){
+
+              revert ServiceMarketplace__TotalSharesShouldBbeGreaterThanBuyableShares(); 
+            }
+_;
+}
+
+modifier nullAddress(address _address){
+    if(_address == address(0)){
+        revert ServiceMarketplace__NullAddress(); 
     }
     _;
 }
 
+            /** PUBLIC FUNCTIONS **/
+
+
+    /// @notice This function create a company. 
+    /// @notice An address cannot create more than one Company.
+    /// @param _name: Name Of the Company
+    /// @param  _totalCompanyValue: The Estimated Value of the company in Toro
+    /// @param _totalShares: The total shares of the company
+    /// @param _sharePrice: The price of each share of the company in Toro.
+    /// @param _buyableShares: The number of shares the comapny wants to sell.
+    /// @notice _buyableShares should be less than _totalShares
+   
 
     function createCompany (
         string memory _name,
@@ -103,13 +146,11 @@ contract ServiceMarketplace is Ownable{
         uint256 _sharePrice,
         uint256 _buyableShares
         
-        ) public companyExist(_name) {
+        ) public  addressCanCreateOnce() companyNameTaken(_name) TotalSharesGreaterThanBuyableShares(_buyableShares,_totalShares){
             
-            if(_buyableShares>= _totalShares){
 
-                revert ServiceMarketplace__TotalSharesShouldBbeGreaterThanBuyableShares(); 
-            }
-
+             bytes memory encodedName = abi.encode(_name);
+             encodedNameList.push(encodedName);
             Company memory company;
             company.name =_name;
             company.totalCompanyValue = _totalCompanyValue;
@@ -118,94 +159,128 @@ contract ServiceMarketplace is Ownable{
             company.buyableShares = _buyableShares;
             company.availableShares = _buyableShares;
             company.owner =msg.sender;
+            company.id = generateNewId();
              
-        bytes memory encodedName = abi.encode(_name);
-        encodedNameList.push(encodedName);
-        
-            
-        emit CompanyCreated(_name, _totalCompanyValue, _totalShares, _sharePrice, _buyableShares,msg.sender);
-        nameToCompany[_name] = company;
-        nameOfCompanyToOwner[_name] =msg.sender;
+
         companiesAddress.push(msg.sender);
         companiesList.push(company);
+        idToCompany[company.id] =company;
+        idToOwner[company.id] = msg.sender;
+        companyOwners.push(msg.sender);
         numberOfCompanies++;
+        
+            
+        emit CompanyCreated(_name, _totalCompanyValue, _totalShares, _sharePrice, _buyableShares,msg.sender,company.id);
+        
 
     }
 
-    function invest(string memory companyName) public payable companyDoesNotExist(companyName) {
+    /// @notice This function allows users to invest in any company.
+    /// @notice When calculated in percentage the value of the investment with respect to the sharePrice and buyableShares must be between 1 and 100
+    /// @param id : Id mapped to the company that a user wants to invest in.
+
+
+
+    function invest(uint256  id) public payable companyDoesNotExist(id)  {
+        Investor  memory investor;
     
-    
-        // for investing users directly send money to thee smart contraact but we mapp the amount to the company
-        // thaty amouttnt is omly the amount that the comapny can withdraw
         require(msg.value > 0, "Investment amount must be greater than 0");
-        uint256  percentage= (((msg.value)/(nameToCompany[companyName].sharePrice * nameToCompany[companyName].buyableShares))*100)/1e18;
+        uint256  percentage= (((msg.value)/(idToCompany[id].sharePrice * idToCompany[id].buyableShares))*100)/1e18;
        
         require(percentage > 0 && percentage <= 100, "Percentage must be between 1 and 100");
 
 
-        uint256 sharesToBuy = (nameToCompany[companyName].buyableShares * percentage)/100;
-        require(sharesToBuy <= nameToCompany[companyName].availableShares, "Not enough shares available");
-        nameToCompany[companyName].availableShares-= sharesToBuy;
-        nameToCompany[companyName].companyFunds+=msg.value;
-        nameToCompany[companyName].investors.push(msg.sender);
-    
+        uint256 sharesToBuy = (idToCompany[id].buyableShares * percentage)/100;
+        require(sharesToBuy <= idToCompany[id].availableShares, "Not enough shares available");
+        idToCompany[id].availableShares-= sharesToBuy;
+        idToCompany[id].companyFunds+=msg.value;
+        idToCompany[id].investors.push(msg.sender);
+
+        investor.investedAmount = msg.value;
+        investor.sharePercentage = percentage;
+        investor.investorAddress = msg.sender;
+       
+       investors.push(investor);
     
         
         // The mapping is investedAmountFor company to amount
-        companyNameToInvestors[companyName][msg.sender].investedAmount += msg.value; 
-        companyNameToInvestors[companyName][msg.sender].sharePercentage += percentage;
+        companyIdToInvestors[id][msg.sender].investedAmount += msg.value; 
+        companyIdToInvestors[id][msg.sender].sharePercentage += percentage;
         
         
-       nameToCompany[companyName].numberOfInvestors++;
+       idToCompany[id].numberOfInvestors++;
 
 
-        emit newInvestor(msg.sender, percentage,nameToCompany[companyName]);// add company
+        emit newInvestor(investor, percentage,idToCompany[id]);
 
         
     }
 
 
-        ///@notice This function takes in the serviceAmount and pay the investors based on thier share
+        ///@notice This function allows a user to pay for any service to a company.
+        /// @notice This function also credits all investors based on thier share percentage and allocate the reminants to the company
+        ///@param id: The Id of the comapny that the user wants to pay to .
 
-    function payForService(string memory companyName) public payable companyDoesNotExist(companyName){ 
+    function payForService(uint256 id) public payable companyDoesNotExist(id){ 
           uint256 totalPayout;
 
-        for (uint256 i = 0; i < nameToCompany[companyName].numberOfInvestors; i++) {
+        for (uint256 i = 0; i < idToCompany[id].numberOfInvestors; i++) {
           
-            address investor = nameToCompany[companyName].investors[i];
+            address investor = idToCompany[id].investors[i];
 
-             uint256 share = ((msg.value/1e18) * companyNameToInvestors[companyName][investor].sharePercentage) / 100;
-             uint256 payout = (companyNameToInvestors[companyName][investor].investedAmount * share) / nameToCompany[companyName].buyableShares;
+             uint256 share = ((msg.value/1e18) * companyIdToInvestors[id][investor].sharePercentage) / 100;
+             uint256 payout = (companyIdToInvestors[id][investor].investedAmount * share) / idToCompany[id].buyableShares;
             
             payable(investor).transfer(payout);
             totalPayout+=payout;    
-            emit ServicePaymentProcessed(msg.value,nameToCompany[companyName]);
+            emit ServicePaymentProcessed(msg.value,idToCompany[id]);
         }
 
         uint256 remainder = msg.value - totalPayout;
 
-        nameToCompany[companyName].companyFunds+=remainder;
+        idToCompany[id].companyFunds+=remainder;
 
         
     }
+    /// @notice This function allows only the owner of Companies to Withdraw thier allocated amount.
+    /// @notice Users cannot call this function because no amount is allocated to them
+    /// Instead when other user calls the payForService function. They get credited automatically.
+    /// @param _amount : The amount the owner of the companay wants to withdraw from the smart contract.
+    /// @notice the _amount must be less than the allocated amount
+    /// @param _address : The address that will recieve the funds.
+    /// @param id: the Id of the company that wants withdrawal.
 
-    function withdraw( uint _amount, address _address, string memory nameOfCompany) public companyDoesNotExist(nameOfCompany) Owner(nameOfCompany)  {// Now the
+    function withdraw( uint _amount, address _address,uint256 id) public companyDoesNotExist(id) Owner(id) nullAddress(_address)  {// Now the
        
-       uint256 maxAmount = nameToCompany[nameOfCompany].companyFunds;
+       uint256 maxAmount = idToCompany[id].companyFunds;
         if(_amount <=maxAmount){
             payable(_address).transfer(_amount);
         }
-        nameToCompany[nameOfCompany].companyFunds -= _amount;
+        idToCompany[id].companyFunds -= _amount;
         
-        emit  withdrawSuccess(_amount, _address,nameToCompany[nameOfCompany]);
+        emit  withdrawSuccess(_amount, _address,idToCompany[id]);
     }
 
-    function checkBalanceOfCompany(string memory nameOfCompany) public companyDoesNotExist(nameOfCompany) Owner(nameOfCompany) view returns (uint256) { // for each company
-        return  nameToCompany[nameOfCompany].companyFunds;
+    /// @notice This function returns the balance of a company that remains in the pool.
+    /// @param id: The Id of the company 
+
+    function checkBalanceOfCompany(uint256 id)  companyDoesNotExist(id) Owner(id) public view returns (uint256) { // for each company
+        return  idToCompany[id].companyFunds;
 
     }
 
-    function compareBytes(bytes memory a, bytes memory b) internal pure returns (bool) {
+            /**    INTERNAL FUNCTIONS **/
+   
+   /// @dev This function generates an Id;
+   function generateNewId() internal  returns(uint256 id){
+    
+    id =numberOfCompanies > 0 ? companiesList[numberOfCompanies - 1].id + 1 : 0;
+    idList.push(id);
+}
+
+/// @notice This function takes in two bytes and compare them.
+/// @dev This function helps to check if the name of a company has not been taken
+ function compareBytes(bytes memory a, bytes memory b) internal pure returns (bool) {
     if (a.length != b.length) {
         return false;
     }
@@ -218,5 +293,8 @@ contract ServiceMarketplace is Ownable{
     
     return true;
 }
-    
+
+   
 }
+
+

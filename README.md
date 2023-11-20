@@ -1,38 +1,88 @@
-1.) Write smart contracts for buy and sell.
-While writing smart contracts to buy from a paarticular company then we get the list of investors 
-frok the backend and then send all the money;
+# EcoPowerHub 🌱💡
+EcoPowerHub: Empowering Tomorrow, One Watt at a Time on ToroNet
+## Welcome to EcoPowerHub
 
-2.) Write smart contracts to invest 
+EcoPowerHub is not just a decentralized application; it's a visionary energy ecosystem on ToroNet. Experience a transformative journey where the energy marketplace meets sustainable investment, setting the stage for a brighter, greener future. Discover eco-conscious services, invest in impactful companies, and be part of a community driving positive change.
+
+## Features that Empower You
+
+### Energy Marketplace 🌐
+- **Discover Eco-Friendly Services:** Explore a diverse range of sustainable services offered by forward-thinking companies.
+- **Seamless Transactions with Toro:** Pay for services effortlessly using ToroNet's stable coin (toro).
+
+### Investment Platform 💰
+- **Invest and Save the Planet:** Be a part of the sustainability revolution by investing in companies that share your values.
+- **Personalized Discounts:** Your investment percentage translates into exclusive discounts on the services you support.
+
+### Smart Contracts Magic ✨
+- **Transparent and Trustworthy:** Our smart contracts ensure fair and transparent transactions, building trust within the community.
+- **Efficient Fund Distribution:** Seamlessly distribute funds to investors based on their contributions and the success of the services.
+
+## A Glimpse of the Future
+
+EcoPowerHub combines cutting-edge technologies to create a seamless, secure, and delightful experience for users. Our commitment to transparency, sustainability, and innovation makes EcoPowerHub a pioneer in the decentralized energy space.
+
+## How to Get Started
+// Add Link to the dApp Here
+1. **Join the Green Revolution:** Clone the repository and become a part of our mission to create a sustainable future.
+2. **Tech Enthusiast? Dive In:** Install dependencies using `npm install` and deploy smart contracts on the ToroNet blockchain.
+3. **Explore and Engage:** Use the dApp frontend (if available) to interact with contracts and services.
+
+## Meet the Brilliant Minds Behind EcoPowerHub
+
+Our diverse team is passionate about creating positive change. Meet the brilliant minds shaping EcoPowerHub's vision and driving innovation in the energy sector.
+<br><br>
+**OLAOYE SALEM IYANULOLUWA olaoyesalemgreat@gmail.com**
+ <br>
+ **IVOR  EDAFE  ivoredafej@gmail.com**
+ <br>
+  **OLUBADEJO CORNELIUS  cornex111@gmail.com**
+ <br>
+  **OGBONNAYA CHINONYEREM JOHNSON  ogbonnayajprof2015@gmail.com**
+ <br>
+
+ * #### Members Role
+   **OLAOYE SALEM IYANULOLUWA** : Responsible for writing and deploying smart contract;
+  <br>
+  **OGBONNAYA CHINONYEREM JOHNSON** :Responsible Writing the front-end;
+  <br>
+  **IVOR EDAFE** : Responsible for co-writing backend
+    <br>
+  **OLUBADEJO CORNELIUS** : Responsible for co-writing backend
+
+## Connect with Us
+
+Got ideas, feedback, or just want to chat?Send a message to any of our mails. Your input fuels our mission!
+
+## Contract Information
+
+### Smart Contract Address
+
+The EcoPowerHub smart contract is deployed on the [[ToroNet Mainnet/Testnet](http://testnet.toronet.org/?source=post_page-----67cae2046bf--------------------------------#)]. Here is the address:
+
+
+### Deployment Transaction Hash
+
+To verify the deployment transaction and obtain additional details, you can use the following transaction hash:
 
 
 
+## Technology Stack 🛠️
 
-I am building a dApp on toronet called ecoPowerHub. The Platform has 2 parts.
-It is an energy market place where companies come and show thier service and userrs check thorugh and order and pay for their service. 
-Also, There's a part where people csan invest in a company. So to invest in a company . A company will give us thew shares they want to put out and then they people invest in it . in percantage . Any user that invests in  a  particular company get's the same peorcentage off the any service tgta the company sells.
+- Smart Contract: Solidity and Hardhat
+- Frontend: React.js and tailwind
+- Backend: python and Django Rest
+- Blockchain: ToroNet
 
-All the investors address are kept in the backend and when ever an comapony sells a service they(the investors) are all credited.
+## Prerequisites ✅
 
-toro is toroNet stable coin. 1 toroNet = $1;
+Ensure you have the following installed:
 
-If Company A is worth 5 million toro
-and they put out 2 million toro for investment.
+- Node.js
+- npm
 
-If  a User H buys 10% of 2 million toro which is 200,000 toro.
+## Known Issues 🐞
 
-onnce Compny A sells service to people worth any amount while crediting Campany A . User H recieves 10% of that amount.
+- Issue 1: ...
+- Issue 2: ...\
 
-
-// So the first smart contract  
-// So  there's just a partcilar contract but each company will de[ploy it,.
-
-bi will be the same but the addresss will be different
-
-
-Invest is the sa,e thing as deploying , so we just need to invest to and sell
-
-
-// Things to do 
-// 1 check if everything is working on locla host
-//  Deploy  on toro net
-// Find a way to deploy everytime and interact 

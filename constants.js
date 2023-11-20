@@ -1,4 +1,20 @@
+const contractAddress= "0x61Fd85926543eD7C3eeea5Fa244003DFD0618aD2"
 const ABI =  [
+  {
+    "inputs": [],
+    "name": "ServiceMarketplace__AddressCannotCreateTwoCompanies",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ServiceMarketplace__CompanyDoesNotExist",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ServiceMarketplace__NullAddress",
+    "type": "error"
+  },
   {
     "inputs": [],
     "name": "ServiceMarketplace__OnlyOwnerCanCallThisFunction",
@@ -11,12 +27,7 @@ const ABI =  [
   },
   {
     "inputs": [],
-    "name": "ServiceMarketplace__companyAlreadyExists",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "ServiceMarketplace__companyDoesNotExist",
+    "name": "ServiceMarketplace__companyNameTaken",
     "type": "error"
   },
   {
@@ -57,11 +68,17 @@ const ABI =  [
         "internalType": "address",
         "name": "owner",
         "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
       }
     ],
     "name": "CompanyCreated",
     "type": "event",
-    "signature": "0x82e658b970e04c2566978e8dcb63aef2a2b7b0a84ea35fd8d3534402caf98742"
+    "signature": "0xc47450d4bc3270f7a53ff3bddf818e7143e2d86e99ff44d933c5a3dd38edde71"
   },
   {
     "anonymous": false,
@@ -143,6 +160,11 @@ const ABI =  [
             "internalType": "address[]",
             "name": "investors",
             "type": "address[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
           }
         ],
         "indexed": true,
@@ -153,16 +175,33 @@ const ABI =  [
     ],
     "name": "ServicePaymentProcessed",
     "type": "event",
-    "signature": "0xe219c8b8a127d0a2114e75cff40a94db2f63a6ea9772b6a7b74b3d5b6c1a7426"
+    "signature": "0xf13bbd1f0ab36c5e686d1da7cc6812b29256c6fc1df65a97982c1d8149b72c59"
   },
   {
     "anonymous": false,
     "inputs": [
       {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "investedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sharePercentage",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "investorAddress",
+            "type": "address"
+          }
+        ],
         "indexed": true,
-        "internalType": "address",
+        "internalType": "struct ServiceMarketplace.Investor",
         "name": "investor",
-        "type": "address"
+        "type": "tuple"
       },
       {
         "indexed": true,
@@ -221,6 +260,11 @@ const ABI =  [
             "internalType": "address[]",
             "name": "investors",
             "type": "address[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
           }
         ],
         "indexed": true,
@@ -231,7 +275,7 @@ const ABI =  [
     ],
     "name": "newInvestor",
     "type": "event",
-    "signature": "0x103ac2865a432ae94e8183e48b1433f0d0c178e6ed2a7d48cdfac39d75ebd952"
+    "signature": "0x9b04894b7dd2657b80568c1fe24b3f3c6d5d3f6f41d6e91010f02f3880227ad2"
   },
   {
     "anonymous": false,
@@ -299,6 +343,11 @@ const ABI =  [
             "internalType": "address[]",
             "name": "investors",
             "type": "address[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
           }
         ],
         "indexed": true,
@@ -309,14 +358,14 @@ const ABI =  [
     ],
     "name": "withdrawSuccess",
     "type": "event",
-    "signature": "0x86294781999d3df5d5c8934a521ec0c126e868e2fb28312298038984d45c1040"
+    "signature": "0x9ced45377d5a2f786af83fa4c0183ff265cf48c3a3ec93815346d52baec727e3"
   },
   {
     "inputs": [
       {
-        "internalType": "string",
-        "name": "nameOfCompany",
-        "type": "string"
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
       }
     ],
     "name": "checkBalanceOfCompany",
@@ -330,7 +379,7 @@ const ABI =  [
     "stateMutability": "view",
     "type": "function",
     "constant": true,
-    "signature": "0xeedf151c"
+    "signature": "0x2e6ac8b3"
   },
   {
     "inputs": [
@@ -359,67 +408,6 @@ const ABI =  [
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
-      }
-    ],
-    "name": "companiesList",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "name",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "totalCompanyValue",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "totalShares",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "sharePrice",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "buyableShares",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "companyFunds",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "availableShares",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "numberOfInvestors",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true,
-    "signature": "0x9c1f5bd2"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
       },
       {
         "internalType": "address",
@@ -427,7 +415,7 @@ const ABI =  [
         "type": "address"
       }
     ],
-    "name": "companyNameToInvestors",
+    "name": "companyIdToInvestors",
     "outputs": [
       {
         "internalType": "uint256",
@@ -438,12 +426,38 @@ const ABI =  [
         "internalType": "uint256",
         "name": "sharePercentage",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "investorAddress",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
     "type": "function",
     "constant": true,
-    "signature": "0x6ae321b1"
+    "signature": "0x4fdac684"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "companyOwners",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true,
+    "signature": "0xa93253c1"
   },
   {
     "inputs": [
@@ -482,90 +496,12 @@ const ABI =  [
   {
     "inputs": [
       {
-        "internalType": "string",
-        "name": "companyName",
-        "type": "string"
-      }
-    ],
-    "name": "invest",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function",
-    "payable": true,
-    "signature": "0x0a8b7826"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
       }
     ],
-    "name": "investorAddresses",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true,
-    "signature": "0x95a25efa"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "name": "nameExists",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true,
-    "signature": "0xcc637afe"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "name": "nameOfCompanyToOwner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true,
-    "signature": "0x1422873f"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "name": "nameToCompany",
+    "name": "idToCompany",
     "outputs": [
       {
         "internalType": "string",
@@ -611,12 +547,32 @@ const ABI =  [
         "internalType": "address",
         "name": "owner",
         "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
     "type": "function",
     "constant": true,
-    "signature": "0x0c5b537a"
+    "signature": "0xc362174c"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "invest",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function",
+    "payable": true,
+    "signature": "0x2afcf480"
   },
   {
     "inputs": [],
@@ -651,9 +607,9 @@ const ABI =  [
   {
     "inputs": [
       {
-        "internalType": "string",
-        "name": "companyName",
-        "type": "string"
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
       }
     ],
     "name": "payForService",
@@ -661,7 +617,7 @@ const ABI =  [
     "stateMutability": "payable",
     "type": "function",
     "payable": true,
-    "signature": "0xa9ce953a"
+    "signature": "0xdbec6def"
   },
   {
     "inputs": [],
@@ -698,15 +654,15 @@ const ABI =  [
         "type": "address"
       },
       {
-        "internalType": "string",
-        "name": "nameOfCompany",
-        "type": "string"
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
       }
     ],
     "name": "withdraw",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function",
-    "signature": "0xf108a7d2"
+    "signature": "0xe63697c8"
   }
 ]

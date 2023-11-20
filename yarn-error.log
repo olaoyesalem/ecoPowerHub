@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/bin/node /mnt/c/Users/scolari/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js add @openzeppelin
+  /usr/bin/node /mnt/c/Users/scolari/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js add @openzeppelin/contracts
 
 PATH: 
-  /home/devsal/.vscode-server/bin/d037ac076cee195194f93ce6fe2bdfe2969cc82d/bin/remote-cli:/home/devsal/.local/share/solana/install/active_release/bin:/home/devsal/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python311/Scripts/:/mnt/c/Python311/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/scolari/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/scolari/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/scolari/.cargo/bin:/mnt/c/Users/scolari/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/scolari/AppData/Roaming/npm:/mnt/c/Users/scolari/AppData/Local/Microsoft/WindowsApps:/snap/bin:/home/devsal/.foundry/bin:/home/devsal/.foundry/bin
+  /home/devsal/.cargo/bin:/home/devsal/.vscode-server/bin/d037ac076cee195194f93ce6fe2bdfe2969cc82d/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python311/Scripts/:/mnt/c/Python311/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/scolari/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/scolari/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/scolari/.cargo/bin:/mnt/c/Users/scolari/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/scolari/AppData/Roaming/npm:/mnt/c/Users/scolari/AppData/Local/Microsoft/WindowsApps:/home/devsal/.foundry/bin
 
 Yarn version: 
   1.22.19
@@ -14,17 +14,16 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@openzeppelin: Request "https://registry.yarnpkg.com/@openzeppelin" returned a 405
-      at params.callback [as _callback] (/mnt/c/Users/scolari/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:66154:18)
-      at self.callback (/mnt/c/Users/scolari/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:140890:22)
-      at Request.emit (node:events:514:28)
-      at Request.<anonymous> (/mnt/c/Users/scolari/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:141862:10)
-      at Request.emit (node:events:514:28)
-      at IncomingMessage.<anonymous> (/mnt/c/Users/scolari/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:141784:12)
+  Error: https://registry.npmjs.org/solc/-/solc-0.7.3.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (/mnt/c/Users/scolari/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:141517:19)
       at Object.onceWrapper (node:events:628:28)
-      at IncomingMessage.emit (node:events:526:35)
-      at endReadableNT (node:internal/streams/readable:1359:12)
-      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+      at ClientRequest.emit (node:events:514:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:847:9)
+      at Object.onceWrapper (node:events:628:28)
+      at TLSSocket.emit (node:events:526:35)
+      at Socket._onTimeout (node:net:571:8)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
 
 npm manifest: 
   {
