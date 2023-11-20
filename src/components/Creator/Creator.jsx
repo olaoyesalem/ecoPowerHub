@@ -17,7 +17,7 @@ const Creator = ({ creatorName, salesAmt, creatorNum, className, href }) => {
         <h4 className="font-semibold">{creatorName}</h4>
         <p className="text-sm sm:text-xs md:text-[0.6rem]">
           <span className="text-darkGrey mr-2 md:mr-1">Total Sales:</span>
-          <span className="font1">{salesAmt} ETH</span>
+          <span className="font1">{salesAmt} Toro</span>
         </p>
       </div>
     </a>

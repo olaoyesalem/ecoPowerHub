@@ -12,7 +12,7 @@ const Section5 = () => {
         <Steps
           src={img.icon}
           setupHeading="Setup Your Wallet"
-          setupText="Set up your wallet of choice. Connect it to the Animarket by clicking the wallet icon in the top right corner."
+          setupText="Set up your wallet of choice. Connect it to our Energy Marketplace by clicking the wallet icon in the top right corner."
         />
         <Steps
           src={img.icon}

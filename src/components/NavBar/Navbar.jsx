@@ -57,7 +57,7 @@ const NavBar = () => {
         </a>
         <Button
           className="py-4 px-5 rounded-2xl rounded-full flex items-center space-x-2 hover:border border-ctaColor"
-          href="#"
+          href="register"
         >
           <GoPerson />
           <span>Sign Up</span>
@@ -75,7 +75,7 @@ const NavBar = () => {
         </a>
         <Button
           className="py-4 px-5 bg-ctaColor rounded-2xl flex items-center space-x-2"
-          href="#"
+          href="register"
         >
           <GoPerson />
           <span>Sign Up</span>

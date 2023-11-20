@@ -1,0 +1,3 @@
+[submodule "smartcontract"]
+	path = smartcontract
+	url = https://github.com/olaoyesalem/ecoPowerHub.git

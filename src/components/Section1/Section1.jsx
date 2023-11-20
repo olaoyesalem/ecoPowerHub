@@ -6,7 +6,7 @@ const Section1 = () => {
     <section className="flex flex-col space-y-8 my-20 w-4/5 mx-auto md:w-5/6">
       <div className="flex flex-col text-start justify-between space-y-2">
         <h2 className="text-xl font-semibold md:text-2xl">
-          Trending Collection
+          Trending Energy Projects
         </h2>
         <p className="text-sm md:text-base">
           Checkout Our Weekly Updated Trending Collection.

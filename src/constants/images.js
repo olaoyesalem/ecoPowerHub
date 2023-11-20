@@ -1,4 +1,5 @@
 import heroImg from "../assets/space5.png";
+import hero from "../assets/hero.jpg"
 import a1 from "../assets/a1.png";
 import icon from "../assets/Icon.png";
 import img from "../assets/Image.png";
@@ -29,6 +30,7 @@ import walletconnect from "../assets/WalletConnect.png";
 
 export default {
   heroImg,
+  hero,
   a1,
   icon,
   img,

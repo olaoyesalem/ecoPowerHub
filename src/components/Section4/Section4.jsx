@@ -30,7 +30,7 @@ const Section4 = () => {
           avatarName="MoonDancer"
           energyName="DistantGalaxy"
           price="1.63ETH"
-          highestBid="0.33wETH"
+          highestBid="0.33Toro"
           className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%] cursor-pointer"
           href="energy"
         />
@@ -40,7 +40,7 @@ const Section4 = () => {
           avatarName="NebulaKid"
           energyName="Life On Edena"
           price="1.63ETH"
-          highestBid="0.33wETH"
+          highestBid="0.33Toro"
           className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%] cursor-pointer"
           href="energy"
         />
@@ -50,7 +50,7 @@ const Section4 = () => {
           avatarName="SpaceOne"
           energyName="AstroFiction"
           price="1.63ETH"
-          highestBid="0.33wETH"
+          highestBid="0.33Toro"
           className="flex flex-col w-full h-full my-3 sm:w-[47%] md:w-[28%] sm:hidden md:flex cursor-pointer"
           href="energy"
         />
