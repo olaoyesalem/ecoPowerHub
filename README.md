@@ -4,6 +4,29 @@ EcoPowerHub: Empowering Tomorrow, One Watt at a Time on ToroNet
 
 EcoPowerHub is not just a decentralized application; it's a visionary energy ecosystem on ToroNet. Experience a transformative journey where the energy marketplace meets sustainable investment, setting the stage for a brighter, greener future. Discover eco-conscious services, invest in impactful companies, and be part of a community driving positive change.
 
+## Problem Statement:
+
+Access to sustainable energy remains a challenge for many communities, impeding economic growth and financial inclusion. Farmers, market participants, and others face operational inefficiencies due to unreliable energy sources.
+
+## EcoPowerHub's Solution:
+
+- **Investment Platform:** Enables community members to invest in sustainable energy companies, contributing to positive environmental impact.
+  
+- **Financial Inclusion:** Allows farmers and market participants to participate in sustainable investments.
+
+- **Personalized Discounts:** Investors receive exclusive discounts on supported services.
+
+## Connectivity with Tracks:
+
+- **Environmental:** Contributes to global SDGs for environmental sustainability.
+
+- **Operations:** Facilitates seamless financial transactions with ToroNet's stable coin.
+
+- **Cooperative & Community:** Fosters community engagement through sustainable investments.
+
+
+
+ 
 ## Features that Empower You
 
 ### Energy Marketplace 🌐
@@ -21,6 +44,7 @@ EcoPowerHub is not just a decentralized application; it's a visionary energy eco
 ## A Glimpse of the Future
 
 EcoPowerHub combines cutting-edge technologies to create a seamless, secure, and delightful experience for users. Our commitment to transparency, sustainability, and innovation makes EcoPowerHub a pioneer in the decentralized energy space.
+## Network: TestNet
 
 ## How to Get Started
 // Add Link to the dApp Here
@@ -46,9 +70,9 @@ Our diverse team is passionate about creating positive change. Meet the brillian
   <br>
   **OGBONNAYA CHINONYEREM JOHNSON** :Responsible Writing the front-end;
   <br>
-  **IVOR EDAFE** : Responsible for co-writing backend
+  **IVOR EDAFE** : Responsible for co-writing backend;
     <br>
-  **OLUBADEJO CORNELIUS** : Responsible for co-writing backend
+  **OLUBADEJO CORNELIUS** : Responsible for co-writing backend;
 
 ## Connect with Us
 
@@ -57,32 +81,40 @@ Got ideas, feedback, or just want to chat?Send a message to any of our mails. Yo
 ## Contract Information
 
 ### Smart Contract Address
+0x61Fd85926543eD7C3eeea5Fa244003DFD0618aD2
 
-The EcoPowerHub smart contract is deployed on the [[ToroNet Mainnet/Testnet](http://testnet.toronet.org/?source=post_page-----67cae2046bf--------------------------------#)]. Here is the address:
-
-
-### Deployment Transaction Hash
-
-To verify the deployment transaction and obtain additional details, you can use the following transaction hash:
-
+The EcoPowerHub smart contract is deployed on the ToroNet TestNet [(https://testnet.toronet.org/address.html?address=0x61Fd85926543eD7C3eeea5Fa244003DFD0618aD2)]. 
 
 
 ## Technology Stack 🛠️
+ Our team has crafted this work from scratch, utilizing the following tools as a foundation:
 
 - Smart Contract: Solidity and Hardhat
 - Frontend: React.js and tailwind
 - Backend: python and Django Rest
 - Blockchain: ToroNet
 
+## Front-End Repo
+<br>
+## BackEnd Repo
+
+<br>
 ## Prerequisites ✅
 
 Ensure you have the following installed:
 
 - Node.js
 - npm
+<br>
+ ## Demo Link
+ <br>
 
-## Known Issues 🐞
+## Video Link
+<br>
+## Tweet Link
+<br>
 
-- Issue 1: ...
-- Issue 2: ...\
+
+ ## License
+ MIT License
 
