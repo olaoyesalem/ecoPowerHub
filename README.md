@@ -57,7 +57,7 @@ EcoPowerHub combines cutting-edge technologies to create a seamless, secure, and
 Our diverse team is passionate about creating positive change. Meet the brilliant minds shaping EcoPowerHub's vision and driving innovation in the energy sector.
 <br><br>
 **OLAOYE SALEM IYANULOLUWA olaoyesalemgreat@gmail.com**
- <br>
+ <br><br>
  **IVOR  EDAFE  ivoredafej@gmail.com**
  <br>
   **OLUBADEJO CORNELIUS  cornex111@gmail.com**
@@ -66,13 +66,11 @@ Our diverse team is passionate about creating positive change. Meet the brillian
  <br>
 
  * #### Members Role
-   **OLAOYE SALEM IYANULOLUWA** : Responsible for writing and deploying smart contract;
-  <br>
-  **OGBONNAYA CHINONYEREM JOHNSON** :Responsible Writing the front-end;
-  <br>
-  **IVOR EDAFE** : Responsible for co-writing backend;
-    <br>
-  **OLUBADEJO CORNELIUS** : Responsible for co-writing backend;
+   - **OLAOYE SALEM IYANULOLUWA:** Responsible for writing and deploying smart contract;
+   - **OGBONNAYA CHINONYEREM JOHNSON:** Responsible for Writing the front-end;
+   - **IVOR EDAFE:** Responsible for co-writing backend;
+   - **OLUBADEJO CORNELIUS:** Responsible for co-writing backend;
+
 
 ## Connect with Us
 
