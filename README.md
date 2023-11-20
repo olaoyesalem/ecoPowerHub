@@ -67,7 +67,7 @@ Our diverse team is passionate about creating positive change. Meet the brillian
 
  * #### Members Role
    **OLAOYE SALEM IYANULOLUWA** : Responsible for writing and deploying smart contract;
-  <br>
+  <br><br>
   **OGBONNAYA CHINONYEREM JOHNSON** :Responsible Writing the front-end;
   <br>
   **IVOR EDAFE** : Responsible for co-writing backend;
