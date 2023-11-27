@@ -1,26 +1,43 @@
 # EcoPowerHub 🌱💡
 EcoPowerHub: Empowering Tomorrow, One Watt at a Time on ToroNet
+
+
+## Join the greener future [deployement link]
 ## Welcome to EcoPowerHub
 
 EcoPowerHub is not just a decentralized application; it's a visionary energy ecosystem on ToroNet. Experience a transformative journey where the energy marketplace meets sustainable investment, setting the stage for a brighter, greener future. Discover eco-conscious services, invest in impactful companies, and be part of a community driving positive change.
+
+## Contract Information
+
+### Smart Contract Address
+0x8EEdc2B3d4584A16223a8f7a486DD8b4B8b3dccC
+
+The EcoPowerHub smart contract is deployed on the ToroNet TestNet [[Link](https://testnet.toronet.org/address.html?address=0x8EEdc2B3d4584A16223a8f7a486DD8b4B8b3dccC)]. 
+
+### Smart Contract Interaction Id
+- 0xc5940eeac6bd5d7de48c3ed3dfd2b7244b7ade733da177829a200830a36787ae (Created Company)
+
+- 0x32933ffc403ae6aa97b01a986aafd96b29d4346e615d2502c275f60f4b134ce8
+- 0xb29dc89eb543bd0930d78131ed68ba788de71e52c079841aea0826b4b5f252ab
 
 ## Problem Statement:
 
 Access to sustainable energy remains a challenge for many communities, impeding economic growth and financial inclusion. Farmers, market participants, and others face operational inefficiencies due to unreliable energy sources.
 
 ## EcoPowerHub's Solution:
+- **Easy Access To Energy:** It allows Users to get the best form of energy close to them.
 
 - **Investment Platform:** Enables community members to invest in sustainable energy companies, contributing to positive environmental impact.
   
 - **Financial Inclusion:** Allows farmers and market participants to participate in sustainable investments.
 
-- **Personalized Discounts:** Investors receive exclusive discounts on supported services.
+- **Real-time Profit Distribution:** Investors receive immediate profits corresponding to the services provided by the company in which they have invested.
 
 ## Connectivity with Tracks:
 
 - **Environmental:** Contributes to global SDGs for environmental sustainability.
 
-- **Operations:** Facilitates seamless financial transactions with ToroNet's stable coin.
+- **Operations:** Facilitates seamless financial transactions with ToroNet's stable coin(Toro).
 
 - **Cooperative & Community:** Fosters community engagement through sustainable investments.
 
@@ -35,7 +52,7 @@ Access to sustainable energy remains a challenge for many communities, impeding 
 
 ### Investment Platform 💰
 - **Invest and Save the Planet:** Be a part of the sustainability revolution by investing in companies that share your values.
-- **Personalized Discounts:** Your investment percentage translates into exclusive discounts on the services you support.
+- **Profitable Investment Incentives:** Your investment percentage translates into profitable returns based on the services you support.
 
 ### Smart Contracts Magic ✨
 - **Transparent and Trustworthy:** Our smart contracts ensure fair and transparent transactions, building trust within the community.
@@ -67,23 +84,17 @@ Our diverse team is passionate about creating positive change. Meet the brillian
 
  * #### Members Role
 
-   - **OLAOYE SALEM IYANULOLUWA:** Responsible for writing and deploying smart contract;
+   - **OLAOYE SALEM IYANULOLUWA:** Team Lead; Responsible for writing and deploying smart contract;
    - **OGBONNAYA CHINONYEREM JOHNSON:** Responsible for Writing the front-end;
    - **IVOR EDAFE:** Responsible for co-writing backend;
    - **OLUBADEJO CORNELIUS:** Responsible for co-writing backend;
 
->>>>>>> f986db3adce13474a2828a6b7cf132d0b1897c9c
 
 ## Connect with Us
 
 Got ideas, feedback, or just want to chat?Send a message to any of our mails. Your input fuels our mission!
 
-## Contract Information
 
-### Smart Contract Address
-0x61Fd85926543eD7C3eeea5Fa244003DFD0618aD2
-
-The EcoPowerHub smart contract is deployed on the ToroNet TestNet [(https://testnet.toronet.org/address.html?address=0x61Fd85926543eD7C3eeea5Fa244003DFD0618aD2)]. 
 
 
 ## Technology Stack 🛠️
@@ -94,15 +105,15 @@ The EcoPowerHub smart contract is deployed on the ToroNet TestNet [(https://test
 - Backend: python and Django Rest
 - Blockchain: ToroNet
 
-## Front-End Repo
-<br>
+
+## FrontEnd Repo
+
 ## BackEnd Repo
 
-<br>
+
 ## Prerequisites ✅
 
 Ensure you have the following installed:
-
 - Node.js
 - npm
 <br>

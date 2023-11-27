@@ -9,23 +9,90 @@ error ServiceMarketplace__OnlyOwnerCanCallThisFunction();
 error ServiceMarketplace__companyNameTaken();
 error ServiceMarketplace__AddressCannotCreateTwoCompanies();
 error ServiceMarketplace__NullAddress();
+error ServiceMarketplace__InsufficientToro();
 
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+
+
 /// @title ServiceMarketplace
 /// @author olaoye salem
 /// @notice This smart contract is is the heart of EcoPowerHub. It controls creation of Companies, deposition and appropriation of funds.
 /// @notice This contract allow users to invest in companies and participate in the revenue sharing. 
 
+/// @title IToroTokenERC20
+/// @notice  This is the Interface for the toro Token and ServiceMarketplace uses the Token
 
-contract ServiceMarketplace is Ownable{
+interface IToroTokenERC20 {
+    /// @notice Get token name
+    function name() external view returns (string memory);
+
+    /// @notice Get token symbol
+    function symbol() external view returns (string memory);
+
+    /// @notice Get token balance
+    function balanceOf(address addr) external view returns (uint256);
+
+    /// @notice Get allowance
+    /// @param owner holder address
+    /// @param spender spender address
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+
+    /// @notice Client toro transfer
+    /// @param to Receiver address
+    /// @param value Transfer amount
+    /// @dev note function return true if the transaction succeed
+    function transfer(address to, uint256 value) external returns (bool);
+
+    /// @notice Client toro approve allowance
+    /// @param spender Spender address
+    /// @param amount Allowance amount
+    /// @dev note function return true if the transaction succeed
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /// @notice Toro transferFrom function
+    /// @param sender Sender address
+    /// @param recipient Recipient address
+    /// @param amount Transfer amount
+    /// @dev note function return true if the transaction succeed
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) external returns (bool);
+
+    /// @notice Calculate transfer fee
+    /// @param sender Sender address
+    /// @param val Transfer amount
+    /// @dev Client can use this function before the transaction to get the potential transaction feehoe
+    function calculateTxFee(address sender, uint256 val)
+        external
+        returns (uint256);
+
+        
+}
+
+
+ contract ServiceMarketplace is Ownable{
+       
+    IToroTokenERC20 public tokenContract;
+
+    constructor() {
+     tokenContract   = IToroTokenERC20(0xff0dFAe9c45EeB5cA5d269BE47eea69eab99bf6C);
+    }
 
 
     /** STATE VARIABLES **/
     
     
     uint256 public  numberOfCompanies;
-
+   
+    
+    
+    
     struct Investor {
         uint256 investedAmount;
         uint256 sharePercentage;
@@ -59,14 +126,34 @@ contract ServiceMarketplace is Ownable{
     event ServicePaymentProcessed( uint256 indexed amountPaid, Company indexed company);
     event withdrawSuccess( uint256 indexed amount , address indexed addressTo , Company indexed company);
     event CompanyCreated(string indexed  name, uint256 indexed totalCompanyValue, uint256 indexed  totalShares, uint256  sharePrice, uint256   buyableShares, address owner, uint256 id );
+    event EtherReceived(address _add, uint256 balance);
+    event withdrawSuccessful(uint256, address);
+
 
     /** MAPPINGS **/
 
     mapping(uint256 => mapping (address => Investor) ) public companyIdToInvestors; 
     mapping (uint256 => Company) public  idToCompany;
     mapping (uint256 => address) private  idToOwner;
+    mapping  (address => uint256) public   investorToAmount;
  
 /** MODIFIER **/
+    modifier isInvestor(address _address) {
+    bool isInvestorAddress = false;
+
+    for (uint256 i = 0; i < numberOfCompanies; i++) {
+        if (companyIdToInvestors[i][_address].investorAddress == _address) {
+            isInvestorAddress = true;
+            break;
+        }
+    }
+
+    require(isInvestorAddress, "Address is not an investor in any company");
+    _;
+}
+
+
+
 
   modifier companyNameTaken (string memory nameOfCompany) {
         bytes memory encodedName = abi.encode(nameOfCompany);
@@ -180,32 +267,45 @@ modifier nullAddress(address _address){
     /// @param id : Id mapped to the company that a user wants to invest in.
 
 
-
-    function invest(uint256  id) public payable companyDoesNotExist(id)  {
+    function invest(uint256  id,uint256 amount) public  companyDoesNotExist(id)  {
         Investor  memory investor;
-    
-        require(msg.value > 0, "Investment amount must be greater than 0");
-        uint256  percentage= (((msg.value)/(idToCompany[id].sharePrice * idToCompany[id].buyableShares))*100)/1e18;
+        
+        require(amount > 0, "Investment amount must be greater than 0");
+
+    tokenContract.transferFrom(msg.sender, address(this), amount);
+
+      // uint256 percentage = amount.mul(100).div(idToCompany[id].sharePrice.mul(idToCompany[id].buyableShares).div(1e18));
+
+        uint256  percentage= (((amount)/(idToCompany[id].sharePrice * idToCompany[id].buyableShares))*100)/1e18;
+        require(percentage > 0 && percentage <= 100, "Percentage must be between 1 and 100");
+
+
+   
        
         require(percentage > 0 && percentage <= 100, "Percentage must be between 1 and 100");
 
 
         uint256 sharesToBuy = (idToCompany[id].buyableShares * percentage)/100;
+
+      //uint256 sharesToBuy = idToCompany[id].buyableShares.mul(percentage).div(100);
         require(sharesToBuy <= idToCompany[id].availableShares, "Not enough shares available");
         idToCompany[id].availableShares-= sharesToBuy;
-        idToCompany[id].companyFunds+=msg.value;
+        idToCompany[id].companyFunds+=amount;
         idToCompany[id].investors.push(msg.sender);
 
-        investor.investedAmount = msg.value;
+        investor.investedAmount = amount;
         investor.sharePercentage = percentage;
         investor.investorAddress = msg.sender;
+
        
        investors.push(investor);
     
         
         // The mapping is investedAmountFor company to amount
-        companyIdToInvestors[id][msg.sender].investedAmount += msg.value; 
+        companyIdToInvestors[id][msg.sender].investedAmount += amount; 
         companyIdToInvestors[id][msg.sender].sharePercentage += percentage;
+        companyIdToInvestors[id][investor.investorAddress]=investor;
+    
         
         
        idToCompany[id].numberOfInvestors++;
@@ -221,27 +321,31 @@ modifier nullAddress(address _address){
         /// @notice This function also credits all investors based on thier share percentage and allocate the reminants to the company
         ///@param id: The Id of the comapny that the user wants to pay to .
 
-    function payForService(uint256 id) public payable companyDoesNotExist(id){ 
-          uint256 totalPayout;
+  function payForService(uint256 id, uint256 amount) public companyDoesNotExist(id) {
+    uint256 totalPayout;
 
-        for (uint256 i = 0; i < idToCompany[id].numberOfInvestors; i++) {
-          
-            address investor = idToCompany[id].investors[i];
-
-             uint256 share = ((msg.value/1e18) * companyIdToInvestors[id][investor].sharePercentage) / 100;
-             uint256 payout = (companyIdToInvestors[id][investor].investedAmount * share) / idToCompany[id].buyableShares;
-            
-            payable(investor).transfer(payout);
-            totalPayout+=payout;    
-            emit ServicePaymentProcessed(msg.value,idToCompany[id]);
-        }
-
-        uint256 remainder = msg.value - totalPayout;
-
-        idToCompany[id].companyFunds+=remainder;
-
-        
+    if (amount <= 0) {
+        revert ServiceMarketplace__InsufficientToro(); 
     }
+
+    tokenContract.transferFrom(msg.sender, address(this), amount);
+
+    for (uint256 i = 0; i < idToCompany[id].numberOfInvestors; i++) {
+        address investor = idToCompany[id].investors[i];
+        
+  uint256 share = ((amount/1e18) * companyIdToInvestors[id][investor].sharePercentage) / 100;
+             uint256 payout = (companyIdToInvestors[id][investor].investedAmount * share) / idToCompany[id].buyableShares;
+        investorToAmount[investor] += payout;
+        totalPayout += payout;
+
+        emit ServicePaymentProcessed(amount, idToCompany[id]);
+    }
+
+    uint256 remainder = amount - totalPayout;
+
+    idToCompany[id].companyFunds += remainder;
+}
+
     /// @notice This function allows only the owner of Companies to Withdraw thier allocated amount.
     /// @notice Users cannot call this function because no amount is allocated to them
     /// Instead when other user calls the payForService function. They get credited automatically.
@@ -250,15 +354,29 @@ modifier nullAddress(address _address){
     /// @param _address : The address that will recieve the funds.
     /// @param id: the Id of the company that wants withdrawal.
 
-    function withdraw( uint _amount, address _address,uint256 id) public companyDoesNotExist(id) Owner(id) nullAddress(_address)  {// Now the
+    function withdrawForCompany( uint _amount, address _address,uint256 id) public companyDoesNotExist(id) Owner(id) nullAddress(_address)  {// Now the
        
        uint256 maxAmount = idToCompany[id].companyFunds;
         if(_amount <=maxAmount){
-            payable(_address).transfer(_amount);
+          require(tokenContract.transfer(_address, _amount), "Token transfer failed: Insufficient allowance or balance");
+          
         }
         idToCompany[id].companyFunds -= _amount;
         
         emit  withdrawSuccess(_amount, _address,idToCompany[id]);
+    }
+
+    function withdrawForInvestor(uint256 _amount, address _address) public isInvestor(msg.sender) {
+        uint256 maxAmount = investorToAmount[msg.sender];
+        if(_amount <=maxAmount){
+          require(tokenContract.transfer(_address, _amount), "Token transfer failed: Insufficient allowance or balance");
+          
+        }
+
+        investorToAmount[msg.sender]-=_amount;
+
+        emit  withdrawSuccessful(_amount,_address );
+
     }
 
     /// @notice This function returns the balance of a company that remains in the pool.
@@ -267,6 +385,11 @@ modifier nullAddress(address _address){
     function checkBalanceOfCompany(uint256 id)  companyDoesNotExist(id) Owner(id) public view returns (uint256) { // for each company
         return  idToCompany[id].companyFunds;
 
+    }
+
+    function checkBalanceOfInvestor() isInvestor(msg.sender) public view returns (uint256)  {
+
+        return  investorToAmount[msg.sender];
     }
 
             /**    INTERNAL FUNCTIONS **/
@@ -294,7 +417,17 @@ modifier nullAddress(address _address){
     return true;
 }
 
-   
+ receive() external payable {
+        emit EtherReceived(msg.sender, msg.value);
+      
+    }
+
+    fallback() external payable {
+        
+        emit EtherReceived(msg.sender, msg.value);
+        
+    }
+  
 }
 
 

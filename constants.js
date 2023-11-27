@@ -1,5 +1,18 @@
-const contractAddress= "0x61Fd85926543eD7C3eeea5Fa244003DFD0618aD2"
-const ABI =  [
+export const ServiceMarketplaceAddress = 0xfC798448f67f9b90906881A763453eE14250a7f6
+export const ServiceMarketplaceABI =  
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor",
+    "signature": "constructor"
+  },
   {
     "inputs": [],
     "name": "ServiceMarketplace__AddressCannotCreateTwoCompanies",
@@ -8,6 +21,11 @@ const ABI =  [
   {
     "inputs": [],
     "name": "ServiceMarketplace__CompanyDoesNotExist",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ServiceMarketplace__InsufficientToro",
     "type": "error"
   },
   {
@@ -79,6 +97,26 @@ const ABI =  [
     "name": "CompanyCreated",
     "type": "event",
     "signature": "0xc47450d4bc3270f7a53ff3bddf818e7143e2d86e99ff44d933c5a3dd38edde71"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_add",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      }
+    ],
+    "name": "EtherReceived",
+    "type": "event",
+    "signature": "0x1e57e3bb474320be3d2c77138f75b7c3941292d647f5f9634e33a8e94e0e069b"
   },
   {
     "anonymous": false,
@@ -361,6 +399,31 @@ const ABI =  [
     "signature": "0x9ced45377d5a2f786af83fa4c0183ff265cf48c3a3ec93815346d52baec727e3"
   },
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "withdrawSuccessful",
+    "type": "event",
+    "signature": "0x65541453b7a0b24b32a4f4eabbb3f82e47464579f8abf733befede438c884ebd"
+  },
+  {
+    "stateMutability": "payable",
+    "type": "fallback",
+    "payable": true
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -380,6 +443,21 @@ const ABI =  [
     "type": "function",
     "constant": true,
     "signature": "0x2e6ac8b3"
+  },
+  {
+    "inputs": [],
+    "name": "checkBalanceOfInvestor",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true,
+    "signature": "0xf608b4e0"
   },
   {
     "inputs": [
@@ -565,14 +643,39 @@ const ABI =  [
         "internalType": "uint256",
         "name": "id",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
       }
     ],
     "name": "invest",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function",
-    "payable": true,
-    "signature": "0x2afcf480"
+    "signature": "0xd87aa643"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "investorToAmount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true,
+    "signature": "0x0d6782ab"
   },
   {
     "inputs": [],
@@ -610,14 +713,18 @@ const ABI =  [
         "internalType": "uint256",
         "name": "id",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
       }
     ],
     "name": "payForService",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function",
-    "payable": true,
-    "signature": "0xdbec6def"
+    "signature": "0x2fbd96fd"
   },
   {
     "inputs": [],
@@ -626,6 +733,21 @@ const ABI =  [
     "stateMutability": "nonpayable",
     "type": "function",
     "signature": "0x715018a6"
+  },
+  {
+    "inputs": [],
+    "name": "tokenContract",
+    "outputs": [
+      {
+        "internalType": "contract IToroTokenERC20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true,
+    "signature": "0x55a373d6"
   },
   {
     "inputs": [
@@ -659,10 +781,215 @@ const ABI =  [
         "type": "uint256"
       }
     ],
-    "name": "withdraw",
+    "name": "withdrawForCompany",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function",
-    "signature": "0xe63697c8"
+    "signature": "0x0169ab05"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "withdrawForInvestor",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0xa37b76ff"
+  },
+  {
+    "stateMutability": "payable",
+    "type": "receive",
+    "payable": true
   }
 ]
+
+export const toroAddress = 0xff0dFAe9c45EeB5cA5d269BE47eea69eab99bf6C
+export const toroABI = [
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address"
+      }
+    ],
+    "name": "allowance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "approve",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "balanceOf",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "val",
+        "type": "uint256"
+      }
+    ],
+    "name": "calculateTxFee",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "name",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "symbol",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "transfer",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferFrom",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
+
+module.exports={
+  ServiceMarketplaceAddress,
+  ServiceMarketplaceABI,
+  toroAddress,
+  toroABI
+}
