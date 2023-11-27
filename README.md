@@ -1,3 +1,4 @@
+
 # EcoPowerHub 🌱💡
 EcoPowerHub: Empowering Tomorrow, One Watt at a Time on ToroNet
 
@@ -64,7 +65,7 @@ EcoPowerHub combines cutting-edge technologies to create a seamless, secure, and
 ## Network: TestNet
 
 ## How to Get Started
-// Add Link to the dApp Here
+ [Demo Link](https:// eco-power-hub.vercel.app)
 1. **Join the Green Revolution:** Clone the repository and become a part of our mission to create a sustainable future.
 2. **Tech Enthusiast? Dive In:** Install dependencies using `npm install` and deploy smart contracts on the ToroNet blockchain.
 3. **Explore and Engage:** Use the dApp frontend (if available) to interact with contracts and services.
@@ -84,7 +85,11 @@ Our diverse team is passionate about creating positive change. Meet the brillian
 
  * #### Members Role
 
+<<<<<<< HEAD
    - **OLAOYE SALEM IYANULOLUWA:** Team Lead; Responsible for writing and deploying smart contract;
+=======
+   - **OLAOYE SALEM IYANULOLUWA:** Team Lead;  Responsible for writing and deploying smart contract;
+>>>>>>> a2e2ebbec52aa8adefb0e4a8552f12d3302d4acd
    - **OGBONNAYA CHINONYEREM JOHNSON:** Responsible for Writing the front-end;
    - **IVOR EDAFE:** Responsible for co-writing backend;
    - **OLUBADEJO CORNELIUS:** Responsible for co-writing backend;
@@ -106,9 +111,13 @@ Got ideas, feedback, or just want to chat?Send a message to any of our mails. Yo
 - Blockchain: ToroNet
 
 
+<<<<<<< HEAD
 ## FrontEnd Repo
 
+=======
+>>>>>>> a2e2ebbec52aa8adefb0e4a8552f12d3302d4acd
 ## BackEnd Repo
+https;//github.com/ivoreda/ecoPowerHub-backend
 
 
 ## Prerequisites ✅
@@ -118,14 +127,19 @@ Ensure you have the following installed:
 - npm
 <br>
  ## Demo Link
+ [Demo Link](https:// eco-power-hub.vercel.app)
+
  <br>
 
-## Video Link
-<br>
+
 ## Tweet Link
 <br>
+[tweet](https://x.com/Salthegeek1/status/1726642614781505766?s=20)
 
 
  ## License
  MIT License
+## ISSUES
+Due to time Constraints The whole dApp is not fully integrated.
+
 
