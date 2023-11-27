@@ -5,7 +5,7 @@ EcoPowerHub: Empowering Tomorrow, One Watt at a Time on ToroNet
 
 ## Join the greener future 
 
- [Demo Link](eco-power-hub-frontend.vercel.app)
+ [Demo Link](https://eco-power-hub-frontend.vercel.app)
 
 ## Welcome to EcoPowerHub
 
@@ -70,7 +70,7 @@ EcoPowerHub combines cutting-edge technologies to create a seamless, secure, and
 
 
 ## How to Get Started
- [Demo Link](eco-power-hub-frontend.vercel.app)
+ [Demo Link](httpps://eco-power-hub-frontend.vercel.app)
 1. **Join the Green Revolution:** Clone the repository and become a part of our mission to create a sustainable future.
 2. **Tech Enthusiast? Dive In:** Install dependencies using `npm install` and deploy smart contracts on the ToroNet blockchain.
 3. **Explore and Engage:** Use the dApp frontend (if available) to interact with contracts and services.
