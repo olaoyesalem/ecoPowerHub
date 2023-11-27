@@ -3,12 +3,15 @@
 EcoPowerHub: Empowering Tomorrow, One Watt at a Time on ToroNet
 
 
-## Join the greener future [deployement link]
+## Join the greener future 
+ [Demo Link](https:// eco-power-hub.vercel.app)
 ## Welcome to EcoPowerHub
 
 EcoPowerHub is not just a decentralized application; it's a visionary energy ecosystem on ToroNet. Experience a transformative journey where the energy marketplace meets sustainable investment, setting the stage for a brighter, greener future. Discover eco-conscious services, invest in impactful companies, and be part of a community driving positive change.
 
 ## Contract Information
+
+### Network: TestNet
 
 ### Smart Contract Address
 0x8EEdc2B3d4584A16223a8f7a486DD8b4B8b3dccC
@@ -16,10 +19,10 @@ EcoPowerHub is not just a decentralized application; it's a visionary energy eco
 The EcoPowerHub smart contract is deployed on the ToroNet TestNet [[Link](https://testnet.toronet.org/address.html?address=0x8EEdc2B3d4584A16223a8f7a486DD8b4B8b3dccC)]. 
 
 ### Smart Contract Interaction Id
-- 0xc5940eeac6bd5d7de48c3ed3dfd2b7244b7ade733da177829a200830a36787ae (Created Company)
+- [[First Interaction](https://testnet.toronet.org/address.html?address=0xc5940eeac6bd5d7de48c3ed3dfd2b7244b7ade733da177829a200830a36787ae)]
+- [[Second Interaction](https://testnet.toronet.org/address.html?address=0x32933ffc403ae6aa97b01a986aafd96b29d4346e615d2502c275f60f4b134ce8)]
+- [[Third Interaction](https://testnet.toronet.org/address.html?address=0xb29dc89eb543bd0930d78131ed68ba788de71e52c079841aea0826b4b5f252ab)]
 
-- 0x32933ffc403ae6aa97b01a986aafd96b29d4346e615d2502c275f60f4b134ce8
-- 0xb29dc89eb543bd0930d78131ed68ba788de71e52c079841aea0826b4b5f252ab
 
 ## Problem Statement:
 
@@ -32,7 +35,7 @@ Access to sustainable energy remains a challenge for many communities, impeding 
   
 - **Financial Inclusion:** Allows farmers and market participants to participate in sustainable investments.
 
-- **Real-time Profit Distribution:** Investors receive immediate profits corresponding to the services provided by the company in which they have invested.
+- **Real-time Profit Distribution:** Investors receive immediate profits corresponding to the services provided by the company in which they have invested i.e based of their shares in the company.
 
 ## Connectivity with Tracks:
 
@@ -62,7 +65,7 @@ Access to sustainable energy remains a challenge for many communities, impeding 
 ## A Glimpse of the Future
 
 EcoPowerHub combines cutting-edge technologies to create a seamless, secure, and delightful experience for users. Our commitment to transparency, sustainability, and innovation makes EcoPowerHub a pioneer in the decentralized energy space.
-## Network: TestNet
+
 
 ## How to Get Started
  [Demo Link](https:// eco-power-hub.vercel.app)
@@ -85,11 +88,7 @@ Our diverse team is passionate about creating positive change. Meet the brillian
 
  * #### Members Role
 
-<<<<<<< HEAD
    - **OLAOYE SALEM IYANULOLUWA:** Team Lead; Responsible for writing and deploying smart contract;
-=======
-   - **OLAOYE SALEM IYANULOLUWA:** Team Lead;  Responsible for writing and deploying smart contract;
->>>>>>> a2e2ebbec52aa8adefb0e4a8552f12d3302d4acd
    - **OGBONNAYA CHINONYEREM JOHNSON:** Responsible for Writing the front-end;
    - **IVOR EDAFE:** Responsible for co-writing backend;
    - **OLUBADEJO CORNELIUS:** Responsible for co-writing backend;
@@ -110,12 +109,9 @@ Got ideas, feedback, or just want to chat?Send a message to any of our mails. Yo
 - Backend: python and Django Rest
 - Blockchain: ToroNet
 
-
-<<<<<<< HEAD
 ## FrontEnd Repo
 
-=======
->>>>>>> a2e2ebbec52aa8adefb0e4a8552f12d3302d4acd
+
 ## BackEnd Repo
 https;//github.com/ivoreda/ecoPowerHub-backend
 
@@ -125,11 +121,6 @@ https;//github.com/ivoreda/ecoPowerHub-backend
 Ensure you have the following installed:
 - Node.js
 - npm
-<br>
- ## Demo Link
- [Demo Link](https:// eco-power-hub.vercel.app)
-
- <br>
 
 
 ## Tweet Link
@@ -139,7 +130,6 @@ Ensure you have the following installed:
 
  ## License
  MIT License
-## ISSUES
-Due to time Constraints The whole dApp is not fully integrated.
+
 
 

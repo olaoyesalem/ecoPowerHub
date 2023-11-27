@@ -6,7 +6,10 @@ typechain
 typechain-types
 note.txt
 front-end
-depployments
+deployments
+smartcontract
+src 
+scripts
 # Hardhat files
 cache
 artifacts

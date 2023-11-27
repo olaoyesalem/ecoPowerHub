@@ -1,5 +1,7 @@
 const { network, deployments } = require('hardhat')
 
+const ToroTokenAddress = 0xff0dFAe9c45EeB5cA5d269BE47eea69eab99bf6C
+
 module.exports = async ({ deployments, getNamedAccounts }) => {
 
 
@@ -10,7 +12,7 @@ module.exports = async ({ deployments, getNamedAccounts }) => {
 
     const ServiceMarketplace = await deploy('ServiceMarketplace', {
         from: deployer,
-        args: [],
+        args: [ToroTokenAddress],
         log: true
     })
 
