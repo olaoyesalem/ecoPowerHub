@@ -6,6 +6,7 @@ EcoPowerHub: Empowering Tomorrow, One Watt at a Time on ToroNet
 ## Join the greener future 
 
  [Demo Link](https://eco-power-hub-frontend.vercel.app)
+![EcoPowerHub — Mozilla Firefox 27_11_2023 23_56_52](https://github.com/olaoyesalem/ecoPowerHub/assets/89555234/1142b2d2-6017-4c10-bc87-6c12eb5c4f7b)
 
 ## Welcome to EcoPowerHub
 
